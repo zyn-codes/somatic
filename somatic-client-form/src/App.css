@@ -1,0 +1,4 @@
+.shadow-neumorphic {
+  /* Use the neumorphic shadow from Tailwind config for consistency */
+  box-shadow: 8px 8px 16px #e0e5ec, -8px -8px 16px #ffffff;
+}
