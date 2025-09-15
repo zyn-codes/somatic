@@ -1,7 +1,6 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -21,7 +20,7 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        neumorphic: '4px 4px 8px #d1d5db, -4px -4px 8px #ffffff',
+        neumorphic: '8px 8px 16px #d1d5db, -8px -8px 16px #ffffff',
       },
     },
   },
