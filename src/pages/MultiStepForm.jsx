@@ -23,30 +23,34 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4">
-      <div className="max-w-4xl w-full bg-white shadow-neumorphic rounded-lg p-8">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4 py-8">
+      <div className="max-w-4xl w-full bg-white shadow-neumorphic rounded-lg p-8 transform transition-all duration-500 hover:shadow-lg">
         <ProgressBar currentStep={currentStep} />
-        {currentStep === 1 && <Step1 />}
-        {currentStep === 2 && <Step2 />}
-        {currentStep === 3 && <Step3 />}
-        {currentStep === 4 && <Step4 />}
-        <div className="flex justify-between mt-8">
-          {currentStep > 1 && (
-            <button
-              onClick={prevStep}
-              className="bg-gray-500 text-white px-6 py-3 rounded-md hover:bg-gray-600 transition duration-300 ease-in-out"
-            >
-              Back
-            </button>
-          )}
-          {currentStep < 4 && (
-            <button
-              onClick={nextStep}
-              className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out ml-auto"
-            >
-              Next
-            </button>
-          )}
+        <div className="min-h-[400px] flex flex-col justify-between">
+          <div className="flex-1">
+            {currentStep === 1 && <Step1 />}
+            {currentStep === 2 && <Step2 />}
+            {currentStep === 3 && <Step3 />}
+            {currentStep === 4 && <Step4 />}
+          </div>
+          <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
+            {currentStep > 1 ? (
+              <button
+                onClick={prevStep}
+                className="bg-gray-500 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+              >
+                ← Back
+              </button>
+            ) : <div />}
+            {currentStep < 4 && (
+              <button
+                onClick={nextStep}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md ml-auto"
+              >
+                Next →
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
