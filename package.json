@@ -6,15 +6,23 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+  "server": "node server/index.cjs"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.12",
+    "axios": "^1.12.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "node-cache": "^5.1.2",
+    "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.0",
-    "tailwindcss": "^3.3.3",
-    "postcss": "^8.4.21",
-    "autoprefixer": "^10.4.12"
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",

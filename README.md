@@ -23,12 +23,27 @@ A modern React-based client form application with Tailwind CSS styling.
    npm install
    ```
 
-3. Start the development server:
+3. Start the frontend (Vite):
    ```bash
    npm run dev
    ```
+   The frontend will be available at http://localhost:5173
 
-   The application will be available at http://localhost:3000
+4. Start the backend (Express):
+   ```bash
+   npm run server
+   ```
+   The backend will be available at http://localhost:5000
+
+## API Keys
+
+Some VPN/proxy detection APIs support free keys. Add them to `.env` (see `.env.example`):
+
+```
+IPAPI_KEY=
+IPGEO_KEY=
+```
+Leave blank to use public endpoints only.
 
 ## Available Scripts
 
