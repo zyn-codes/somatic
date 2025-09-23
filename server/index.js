@@ -1,71 +1,141 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const rateLimit = require('express-rate-limit');
-const ipServices = require('./utils/ipServices');
+
+import 'dotenv/config';
+import express from 'express';
+import { Server } from 'socket.io';
+import http from 'http';
+import fs from 'fs/promises';
+import path from 'path';
+import geoip from 'geoip-lite';
+import UAParser from 'ua-parser-js';
+import requestIp from 'request-ip';
+import cors from 'cors';
+import { limiter, apiLimiter, helmetConfig } from './middleware/security.js';
+import { validateVisitData, sanitizeVisitData, cleanOldBackups } from './middleware/validation.js';
 
 const app = express();
-const PORT = 5000;
+const server = http.createServer(app);
+const io = new Server(server, { cors: { origin: '*' } });
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
-app.use(bodyParser.json());
+// Security middleware
+app.use(helmetConfig);
+app.use(cors({
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : '*',
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
+app.use(express.json({ limit: '10kb' })); // Limit payload size
+app.use('/api', apiLimiter);
+app.use(limiter);
 
-const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 100,
-  message: 'Too many requests from this IP, please try again later.'
+// Static files
+app.use(express.static('public'));
+app.use(express.static('dist'));
+
+// Admin namespace with simple password auth
+const adminNamespace = io.of('/admin');
+adminNamespace.use((socket, next) => {
+    const token = socket.handshake.auth.token;
+    if (token === process.env.ADMIN_PASSWORD) next();
+    else next(new Error('Authentication failed'));
 });
-app.use('/api/log-visit', limiter);
 
-function sanitizePayload(payload) {
-  // Basic sanitization
-  const safe = {};
-  for (const key in payload) {
-    if (typeof payload[key] === 'string') {
-      safe[key] = payload[key].replace(/[^\w .\-@:/]/gi, '');
-    } else {
-      safe[key] = payload[key];
+// Health check
+app.get('/health', (_, res) => res.json({ status: 'ok' }));
+
+// Log visit
+app.post('/api/log-visit', validateVisitData, async (req, res) => {
+    try {
+        // Get IP and parse user agent
+        const clientIp = requestIp.getClientIp(req);
+        const ua = new UAParser(req.headers['user-agent']);
+        const geo = geoip.lookup(clientIp);
+
+        // Construct visit data
+        const visit = sanitizeVisitData({
+            timestamp: new Date().toISOString(),
+            ip: clientIp,
+            url: req.body.url,
+            referrer: req.body.referrer || req.headers.referer,
+            userAgent: req.headers['user-agent'],
+            ua_parsed: ua.getResult(),
+            location: geo ? {
+                country: geo.country,
+                region: geo.region,
+                city: geo.city,
+                timezone: geo.timezone,
+                ll: geo.ll
+            } : null
+        });
+
+        // Ensure data directory exists
+        const dataDir = path.join(process.cwd(), 'data');
+        await fs.mkdir(dataDir, { recursive: true });
+
+        // Clean old backups (files older than 7 days)
+        await cleanOldBackups(dataDir);
+
+        // Append to clicks.json atomically
+        const filePath = path.join(dataDir, 'clicks.json');
+        await fs.appendFile(filePath, JSON.stringify(visit) + '\n', { encoding: 'utf8' });
+
+        // Emit to admin clients
+        adminNamespace.emit('visit', visit);
+        res.status(204).end();
+    } catch (error) {
+        console.error('Error logging visit:', error);
+        res.status(500).json({ error: 'Server error' });
     }
-  }
-  return safe;
+});
+
+// Get historical clicks
+app.get('/api/clicks', async (req, res) => {
+    try {
+        const filePath = path.join(process.cwd(), 'data', 'clicks.json');
+        let clicks = [];
+
+        try {
+            const data = await fs.readFile(filePath, 'utf8');
+            clicks = data.trim().split('\n').map(line => JSON.parse(line));
+        } catch (e) {
+            // File doesn't exist or is empty, return empty array
+        }
+
+        res.json(clicks);
+    } catch (error) {
+        console.error('Error reading clicks:', error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+// File size check middleware
+async function checkFileSize(req, res, next) {
+    try {
+        const filePath = path.join(process.cwd(), 'data', 'clicks.json');
+        const stats = await fs.stat(filePath);
+        
+        // If file is > 1MB, rotate it
+        if (stats.size > 1024 * 1024) {
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            const backupPath = `${filePath}.${timestamp}`;
+            await fs.rename(filePath, backupPath);
+        }
+    } catch (error) {
+        // File doesn't exist yet, that's fine
+    }
+    next();
 }
 
-app.post('/api/log-visit', async (req, res) => {
-  try {
-    const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip;
-    const {
-      userAgent, os, deviceType, screenResolution, timezone, languages,
-      referrer, latency, webrtcIPs, timestamp
-    } = sanitizePayload(req.body);
+// Add file size check before logging visits
+app.post('/api/log-visit', checkFileSize);
 
-    // VPN/Proxy detection
-    const vpnResult = await ipServices.getIpInfo(ip, {
-      clientTimezone: timezone,
-      latency,
-      webrtcIPs
-    });
-
-    // Log full payload and detection result
-    console.log('[VISIT]', {
-      ip,
-      userAgent, os, deviceType, screenResolution, timezone, languages,
-      referrer, latency, webrtcIPs, timestamp,
-      vpnResult
-    });
-
-    // Only send minimal info to frontend
-    res.json({
-      score: vpnResult.score,
-      vpnDetected: vpnResult.vpnDetected,
-      geoInfo: { country: vpnResult.geoInfo.country }
-    });
-  } catch (err) {
-    console.error('Error in /api/log-visit:', err);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+// Error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+// Start server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

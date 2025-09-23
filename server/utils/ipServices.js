@@ -1,17 +1,18 @@
-const axios = require('axios');
-const NodeCache = require('node-cache');
+import axios from 'axios';
+import NodeCache from 'node-cache';
+
 const cache = new NodeCache({ stdTTL: 600 });
 
 const CLOUD_PROVIDERS = [
   'amazon', 'aws', 'google', 'gcp', 'ovh', 'digitalocean', 'azure', 'microsoft', 'linode', 'vultr', 'hetzner', 'oracle', 'alibaba', 'upcloud', 'scaleway', 'contabo', 'packet', 'cloud', 'data center', 'datacenter'
 ];
 
-function isCloudProvider(isp, asn) {
-  const lower = (isp + ' ' + asn).toLowerCase();
+function isCloudProvider(isp = '', asn = '') {
+  const lower = (String(isp) + ' ' + String(asn)).toLowerCase();
   return CLOUD_PROVIDERS.some(p => lower.includes(p));
 }
 
-async function getIpInfo(ip, keys = {}) {
+export async function getIpInfo(ip, keys = {}) {
   // Check cache first
   const cached = cache.get(ip);
   if (cached) return cached;
@@ -101,8 +102,4 @@ async function getIpInfo(ip, keys = {}) {
   return result;
 }
 
-module.exports = {
-  getIpInfo,
-  isCloudProvider,
-  cache
-};
+export { isCloudProvider, cache };
