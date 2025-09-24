@@ -1,0 +1,12 @@
+[dotenv@17.2.2] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+Server running on port 5000
+Auth attempt with token: admin123
+Authentication successful
+Auth attempt with token: bad
+Authentication failed
+Auth attempt with token: admin123
+Authentication successful
+Auth attempt with token: bad
+Authentication failed
+Auth attempt with token: admin123
+Authentication successful

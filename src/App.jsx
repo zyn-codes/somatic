@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import MultiStepForm from './pages/MultiStepForm';
+import AdminPanel from './pages/AdminPanel';
+import ErrorBoundary from './components/ErrorBoundary';
+import { logPageView, logError } from './utils/analytics';
 import './index.css';
 import { getLocalIPs } from './utils/webrtcDetect';
 
@@ -23,41 +26,39 @@ function getVisitorPayload(localIPs = []) {
 async function pingBackend() {
   const start = performance.now();
   try {
-    await fetch('http://localhost:5000/api/log-visit', { method: 'OPTIONS' });
+    await fetch('/api/log-visit', { method: 'OPTIONS' });
   } catch {}
   return Math.round(performance.now() - start);
 }
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
-    (async () => {
-      const localIPs = await getLocalIPs();
-      const latency = await pingBackend();
-      const payload = { ...getVisitorPayload(localIPs), latency };
-      try {
-        const res = await fetch('http://localhost:5000/api/log-visit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (import.meta.env.DEV) {
-          if (data.score > 70) {
-            console.log('High VPN Risk', data);
-          } else {
-            console.log('Normal Visit', data);
-          }
-        }
-      } catch (err) {
-        if (import.meta.env.DEV) console.error('Visitor log failed', err);
-      }
-    })();
-  }, []);
+    document.title = 'Somatic Form';
+    
+    // Log page view when route changes
+    logPageView(location.pathname);
+
+    // Set up global error handler
+    const originalConsoleError = console.error;
+    console.error = (...args) => {
+      logError(args.join(' '));
+      originalConsoleError.apply(console, args);
+    };
+
+    return () => {
+      console.error = originalConsoleError;
+    };
+  }, [location.pathname]);
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/form" element={<MultiStepForm />} />
-    </Routes>
+    <ErrorBoundary>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/form" element={<MultiStepForm />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </ErrorBoundary>
   );
 }
 
