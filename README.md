@@ -1,88 +1,118 @@
-
 # Somatic Client Form
 
-A modern React-based client form application with Tailwind CSS styling.
+A sophisticated multi-step form application with real-time admin monitoring capabilities. Built with React, Express, and Socket.IO.
 
-## Fast Deploy Guide
+## Features
 
-### 1. Environment
+- 📝 Multi-step form with progress tracking
+- 🔄 Real-time admin panel for monitoring form submissions
+- 📊 Comprehensive visit analytics and logging
+- 🌍 Geolocation tracking
+- 📱 Device and browser detection
+- 🔒 Enhanced security measures
+- 📈 Real-time WebSocket updates
 
-Create a `.env` file at the project root with (example values):
+## Architecture
 
-```
-PORT=3959
-ADMIN_PASSWORD=admin123
-ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
-```
+### Frontend (`/src`)
+- Built with React + Vite
+- Tailwind CSS for styling
+- Components:
+  - `MultiStepForm`: Core form component with 4 steps
+  - `ErrorBoundary`: Global error handling
+  - `ProgressBar`: Visual step progress
+  - Individual step components (Step1-4)
+- Analytics and WebRTC detection utilities
 
-### 2. Start the app (development)
+### Backend (`/server`)
+- Express.js server with Socket.IO integration
+- Features:
+  - Visit logging with enhanced data collection
+  - Real-time admin notifications
+  - Geolocation tracking
+  - Security middleware (rate limiting, CORS, etc.)
+  - Comprehensive logging system
 
-Install deps and start the server + client (from project root):
+## Setup
 
-```bash
-npm install
-npm run start-server   # starts the API server (server/index.mjs)
-npm run dev            # starts the Vite dev server for the React app
-```
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Open the client in your browser (usually http://localhost:5173). The Admin Panel is at `/admin`.
+2. Set up environment variables:
+   - Create a `.env` file in the root directory
+   - Required variables:
+     ```
+     ADMIN_PASSWORD=your_secure_password
+     NODE_ENV=development
+     ```
 
-### 3. Admin Login
+3. Development mode:
+   ```bash
+   npm run dev        # Start Vite dev server
+   npm run start:dev  # Start backend server
+   ```
 
-Use the `ADMIN_PASSWORD` value from your `.env` to log into the Admin Panel.
-
-### 4. Troubleshooting
-
-- Ensure `ADMIN_PASSWORD` and `PORT` are set in `.env` at the project root.
-- The client uses `VITE_API_URL` when present; otherwise it defaults to `http://localhost:<PORT>`.
-- If socket auth fails, verify the password matches and that ALLOWED_ORIGINS include your client origin.
-
-## Technologies Used
-
-- React 18
-- React Router DOM
-- Vite
-- Tailwind CSS
-- PostCSS
-
-## API Keys
-
-Some VPN/proxy detection APIs support free keys. Add them to `.env` (see `.env.example`):
-
-```
-IPAPI_KEY=
-IPGEO_KEY=
-```
-Leave blank to use public endpoints only.
-
-## Available Scripts
-
-- `npm run dev` - Start the development server
-- `npm run build` - Build the application for production
-- `npm run preview` - Preview the production build locally
+4. Production build:
+   ```bash
+   npm run build     # Build frontend
+   npm start         # Start production server
+   ```
 
 ## Project Structure
 
 ```
-somatic-client-form/
-├── src/
-│   ├── components/     # Reusable React components
-│   ├── pages/         # Page components and routes
-│   ├── App.jsx        # Main application component
-│   ├── main.jsx       # Application entry point
-│   └── index.css      # Global styles and Tailwind imports
-├── index.html         # HTML template
-├── vite.config.js     # Vite configuration
-├── tailwind.config.js # Tailwind CSS configuration
-└── postcss.config.js  # PostCSS configuration
+├── src/                  # Frontend source code
+│   ├── components/       # React components
+│   ├── pages/           # Page components
+│   └── utils/           # Frontend utilities
+├── server/              # Backend source code
+│   ├── middleware/      # Express middleware
+│   ├── utils/          # Backend utilities
+│   └── data/           # Data storage
+├── logs/               # Application logs
+└── dist/               # Production build
 ```
 
-## Contributing
+## Security Features
 
-1. Create a feature branch
-2. Make your changes
-3. Submit a pull request
+- Rate limiting on API endpoints
+- CORS configuration
+- Request size limiting
+- Helmet security headers
+- Input sanitization
+- IP tracking and logging
 
-## License
+## Admin Panel
 
-MIT
+Access the admin panel at `/admin` to:
+- Monitor form submissions in real-time
+- View visitor analytics
+- Track form completion rates
+- Monitor server metrics
+
+## Testing
+
+Run admin socket tests:
+```bash
+npm run test-admin-socket
+```
+
+## Deployment
+
+The application is configured for deployment on both Railway and Vercel platforms:
+- `railway.toml`: Railway deployment configuration
+- `vercel.json`: Vercel deployment configuration
+
+## Technical Stack
+
+- **Frontend**: React, Vite, Tailwind CSS, Socket.IO Client
+- **Backend**: Express.js, Socket.IO, Winston Logger
+- **Development**: Node.js, Playwright for testing
+- **Build Tools**: Vite, PostCSS
+
+## Browser Support
+
+Supports all modern browsers with WebSocket capabilities.
+Mobile-responsive design for all form interfaces.
