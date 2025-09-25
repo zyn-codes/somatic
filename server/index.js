@@ -31,6 +31,7 @@ import { fileURLToPath } from 'url';
 import { limiter, apiLimiter, helmetConfig } from './middleware/security.js';
 import { validateVisitData, sanitizeVisitData, cleanOldBackups } from './middleware/validation.js';
 import logger from './utils/logger.js';
+import { logVisitToDiscord } from './utils/discordLogger.js';
 
 /**
  * Module Configuration and Environment Setup
@@ -86,6 +87,9 @@ app.use(cors({
     credentials: true,
     maxAge: 86400 // CORS preflight cache time
 }));
+
+// Parse JSON request bodies
+app.use(express.json({ limit: '1mb' }));
 
 // Request parsing and limits
 // Add request ID and timing to each request
@@ -238,8 +242,12 @@ app.get('/health', (_, res) => {
         }
     });
 });
-app.post('/api/log-visit', validateVisitData, async (req, res) => {
+app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) => {
     try {
+        logger.info('Received visit data:', {
+            body: req.body,
+            headers: req.headers
+        });
         // Extract core information
         const clientIp = requestIp.getClientIp(req);
         const ua = new UAParser(req.headers['user-agent']);
@@ -282,23 +290,24 @@ app.post('/api/log-visit', validateVisitData, async (req, res) => {
                 timezone: geo.timezone,
                 ll: geo.ll,
                 area: geo.area,
-                range: geo.range,
-                eu: geo.eu,
-                metro: geo.metro,
-                accuracy: geo.accuracy
-            } : null,
+            range: geo.range,
+            eu: geo.eu,
+            metro: geo.metro,
+            accuracy: geo.accuracy
+        } : null,
             
-            // Enhanced browser/client info
-            headers: {
-                accept: req.headers.accept,
-                'accept-language': req.headers['accept-language'],
-                'accept-encoding': req.headers['accept-encoding'],
-                'sec-ch-ua': req.headers['sec-ch-ua'],
-                'sec-ch-ua-mobile': req.headers['sec-ch-ua-mobile'],
-                'sec-ch-ua-platform': req.headers['sec-ch-ua-platform']
-            },
-            
-            // Client-provided data
+        // Enhanced browser/client info
+        headers: {
+            accept: req.headers.accept,
+            'accept-language': req.headers['accept-language'],
+            'accept-encoding': req.headers['accept-encoding'],
+            'sec-ch-ua': req.headers['sec-ch-ua'],
+            'sec-ch-ua-mobile': req.headers['sec-ch-ua-mobile'],
+            'sec-ch-ua-platform': req.headers['sec-ch-ua-platform']
+        },
+        
+        // Form data if this is a submission
+        formData: isFormSubmission ? req.body.formData : undefined,            // Client-provided data
             ...req.body,
             
             // Additional metadata
@@ -309,9 +318,28 @@ app.post('/api/log-visit', validateVisitData, async (req, res) => {
             }
         });
         const filePath = path.join(__dirname, 'data', 'clicks.json');
-        await fs.appendFile(filePath, JSON.stringify(visit) + '\n');
-        adminNamespace.emit('visit', visit);
-        res.status(200).json({ success: true, visitId: visit.timestamp });
+    await fs.appendFile(filePath, JSON.stringify(visit) + '\n');
+    
+    // Emit to admin panel
+    adminNamespace.emit('visit', visit);
+    
+    // Log to Discord with error handling
+    try {
+        await logVisitToDiscord(visit);
+    } catch (error) {
+        logger.error('Failed to send visit to Discord webhook', {
+            error: error.message,
+            visit: {
+                id: visit.id,
+                type: visit.type,
+                timestamp: visit.timestamp
+            }
+        });
+        // Don't fail the request if Discord logging fails
+    }
+    // Send to Discord (non-blocking)
+    logVisitToDiscord(visit);
+    res.status(200).json({ success: true, visitId: visit.timestamp });
     } catch (error) {
         logger.error('Error logging visit', { error: error.message, stack: error.stack });
         res.status(500).json({ error: 'Server error' });
