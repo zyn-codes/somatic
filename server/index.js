@@ -28,6 +28,7 @@ import UAParser from 'ua-parser-js';
 import requestIp from 'request-ip';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
+import os from 'os';
 import { limiter, apiLimiter, helmetConfig } from './middleware/security.js';
 import { validateVisitData, sanitizeVisitData, cleanOldBackups } from './middleware/validation.js';
 import logger from './utils/logger.js';
@@ -313,7 +314,7 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
             // Additional metadata
             meta: {
                 processedAt: timestamp,
-                serverHostname: require('os').hostname(),
+                serverHostname: os.hostname(),
                 nodeVersion: process.version,
             }
         });
@@ -326,6 +327,10 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
     // Log to Discord with error handling
     try {
         await logVisitToDiscord(visit);
+        logger.info('Successfully sent visit to Discord webhook', {
+            visitId: visit.timestamp,
+            type: visit.type
+        });
     } catch (error) {
         logger.error('Failed to send visit to Discord webhook', {
             error: error.message,
@@ -337,8 +342,7 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
         });
         // Don't fail the request if Discord logging fails
     }
-    // Send to Discord (non-blocking)
-    logVisitToDiscord(visit);
+    
     res.status(200).json({ success: true, visitId: visit.timestamp });
     } catch (error) {
         logger.error('Error logging visit', { error: error.message, stack: error.stack });

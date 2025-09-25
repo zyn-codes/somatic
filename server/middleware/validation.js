@@ -86,15 +86,17 @@ export function validateVisitData(req, res, next) {
             });
         }
 
-    // Log the validated request with full context
-    logger.info('Visit data validated', {
-        requestId: req.id,
-        ip: req.ip,
-        url: url,
-        type: req.body.type || 'page_visit',
-        userAgent: req.headers['user-agent'],
-        validationTime: Date.now() - req.startTime
-    });        next();
+        // Log the validated request with full context
+        logger.info('Visit data validated', {
+            requestId: req.id,
+            ip: req.ip,
+            url: url,
+            type: req.body.type || 'page_visit',
+            userAgent: req.headers['user-agent'],
+            validationTime: Date.now() - req.startTime
+        });
+        
+        next();
     } catch (error) {
         logger.error('Visit validation error:', {
             error: error.message,
