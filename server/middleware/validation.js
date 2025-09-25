@@ -1,35 +1,111 @@
 import { URL } from 'url';
+import fs from 'fs/promises';
+import path from 'path';
+import logger from '../utils/logger.js';
 
 /**
  * Validate and sanitize visit data
  */
+/**
+ * Enhanced validation middleware for visit data.
+ * Validates and normalizes incoming visit data before processing.
+ */
 export function validateVisitData(req, res, next) {
     try {
-        const { url, referrer } = req.body;
+        const { url, referrer, deviceType, screenResolution, timezone, languages, webrtcIPs } = req.body;
 
-        // Validate URL
-        if (!url) {
-            return res.status(400).json({ error: 'URL is required' });
-        }
-        try {
-            new URL(url);
-        } catch (e) {
-            return res.status(400).json({ error: 'Invalid URL format' });
+        const errors = [];
+
+        // URL validation with additional checks
+        if (url) {
+            try {
+                const parsedUrl = new URL(url);
+                // Additional URL validation
+                if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+                    errors.push('URL must use HTTP or HTTPS protocol');
+                }
+            } catch (e) {
+                errors.push('Invalid URL format');
+            }
         }
 
-        // Validate referrer if present
+        // Referrer validation
         if (referrer) {
             try {
                 new URL(referrer);
             } catch (e) {
-                return res.status(400).json({ error: 'Invalid referrer format' });
+                errors.push('Invalid referrer format');
             }
         }
 
-        next();
+        // Device type validation
+        if (deviceType && !['mobile', 'desktop', 'tablet', 'bot'].includes(deviceType)) {
+            errors.push('Invalid device type');
+        }
+
+        // Screen resolution format validation
+        if (screenResolution && !/^\d+x\d+$/.test(screenResolution)) {
+            errors.push('Invalid screen resolution format (should be WxH)');
+        }
+
+        // Timezone validation
+        if (timezone) {
+            try {
+                Intl.DateTimeFormat(undefined, { timeZone: timezone });
+            } catch (e) {
+                errors.push('Invalid timezone');
+            }
+        }
+
+        // Languages validation
+        if (languages && typeof languages === 'string') {
+            const invalidLangs = languages.split(',').filter(lang => !/^[a-zA-Z-]+$/.test(lang.trim()));
+            if (invalidLangs.length > 0) {
+                errors.push('Invalid language codes detected');
+            }
+        }
+
+        // WebRTC IPs validation
+        if (webrtcIPs && Array.isArray(webrtcIPs)) {
+            const invalidIPs = webrtcIPs.filter(ip => {
+                // Basic IP format validation
+                return !/^(\d{1,3}\.){3}\d{1,3}$/.test(ip) && 
+                       !ip.includes(':') && // Allow IPv6
+                       !/^[a-zA-Z0-9.-]+\.local$/.test(ip); // Allow .local addresses
+            });
+            if (invalidIPs.length > 0) {
+                errors.push('Invalid IP addresses in webrtcIPs');
+            }
+        }
+
+        if (errors.length > 0) {
+            return res.status(400).json({ 
+                error: 'Validation failed', 
+                details: errors,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+    // Log the validated request with full context
+    logger.info('Visit data validated', {
+        requestId: req.id,
+        ip: req.ip,
+        url: url,
+        type: req.body.type || 'page_visit',
+        userAgent: req.headers['user-agent'],
+        validationTime: Date.now() - req.startTime
+    });        next();
     } catch (error) {
-        console.error('Validation error:', error);
-        res.status(400).json({ error: 'Invalid request data' });
+        logger.error('Visit validation error:', {
+            error: error.message,
+            stack: error.stack,
+            body: req.body
+        });
+        res.status(400).json({ 
+            error: 'Invalid request data',
+            message: error.message,
+            timestamp: new Date().toISOString()
+        });
     }
 }
 
@@ -51,7 +127,7 @@ export function sanitizeVisitData(data) {
  */
 export async function cleanOldBackups(directory, maxAge = 7 * 24 * 60 * 60 * 1000) {
     try {
-        const files = await fs.readdir(directory);
+    const files = await fs.readdir(directory);
         const now = Date.now();
 
         for (const file of files) {

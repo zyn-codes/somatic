@@ -1,0 +1,584 @@
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:51:25.398Z'
+  },
+  timestamp: '2025-09-24T14:51:25.398Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:51:25.434Z'
+  },
+  timestamp: '2025-09-24T14:51:25.435Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:51:51.368Z'
+  },
+  timestamp: '2025-09-24T14:51:51.369Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:51:52.173Z'
+  },
+  timestamp: '2025-09-24T14:51:52.174Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:03.096Z'
+  },
+  timestamp: '2025-09-24T14:52:03.096Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:03.251Z'
+  },
+  timestamp: '2025-09-24T14:52:03.251Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:08.300Z'
+  },
+  timestamp: '2025-09-24T14:52:08.300Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:09.092Z'
+  },
+  timestamp: '2025-09-24T14:52:09.092Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:54.811Z'
+  },
+  timestamp: '2025-09-24T14:52:54.811Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:52:54.825Z'
+  },
+  timestamp: '2025-09-24T14:52:54.825Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:53:12.772Z'
+  },
+  timestamp: '2025-09-24T14:53:12.772Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    timestamp: '2025-09-24T14:53:12.776Z'
+  },
+  timestamp: '2025-09-24T14:53:12.776Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    query: [Object: null prototype] {},
+    body: {
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      os: 'Win32',
+      deviceType: 'desktop',
+      screenResolution: '1366x768',
+      timezone: 'Asia/Karachi',
+      languages: 'en-US',
+      referrer: 'https://supreme-guide-r45gj4xxgj4v3xpvq.github.dev/',
+      latency: 1022,
+      webrtcIPs: [ '753486e8-98c6-411c-8e98-0d342588faf6.local' ],
+      timestamp: '2025-09-24T15:38:40.532Z',
+      url: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:5000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:5000',
+      referer: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/',
+      'x-request-id': 'b6839d915ae5bcf76e2250423286f1ee',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev',
+      'x-forwarded-for': '58.65.166.210',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '486'
+    },
+    ip: '58.65.166.210',
+    timestamp: '2025-09-24T15:38:42.516Z'
+  },
+  timestamp: '2025-09-24T15:38:42.516Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    query: [Object: null prototype] {},
+    body: {
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      os: 'Win32',
+      deviceType: 'desktop',
+      screenResolution: '1366x768',
+      timezone: 'Asia/Karachi',
+      languages: 'en-US',
+      referrer: 'https://supreme-guide-r45gj4xxgj4v3xpvq.github.dev/',
+      latency: 1152,
+      webrtcIPs: [ '753486e8-98c6-411c-8e98-0d342588faf6.local' ],
+      timestamp: '2025-09-24T15:38:40.631Z',
+      url: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:5000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:5000',
+      referer: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/',
+      'x-request-id': '7f2497ce40d1b45cb9595cc8f818a140',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev',
+      'x-forwarded-for': '58.65.166.210',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '486'
+    },
+    ip: '58.65.166.210',
+    timestamp: '2025-09-24T15:38:42.611Z'
+  },
+  timestamp: '2025-09-24T15:38:42.611Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    query: [Object: null prototype] {},
+    body: {
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      os: 'Win32',
+      deviceType: 'desktop',
+      screenResolution: '1366x768',
+      timezone: 'Asia/Karachi',
+      languages: 'en-US',
+      referrer: '',
+      latency: 1049,
+      webrtcIPs: [ 'ad5448a2-a3b3-4f9a-aa24-f076520ee5db.local' ],
+      timestamp: '2025-09-24T15:38:48.564Z',
+      url: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/admin'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:5000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:5000',
+      referer: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/admin',
+      'x-request-id': 'a476230d5bf46e9bced25b72dbf6c673',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev',
+      'x-forwarded-for': '58.65.166.210',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '440'
+    },
+    ip: '58.65.166.210',
+    timestamp: '2025-09-24T15:38:49.567Z'
+  },
+  timestamp: '2025-09-24T15:38:49.567Z'
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: 'logger is not defined',
+    stack: 'ReferenceError: logger is not defined\n' +
+      '    at validateVisitData (file:///workspaces/somatic/server/middleware/validation.js:97:9)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/lib/route.js:157:13)\n' +
+      '    at Route.dispatch (/workspaces/somatic/server/node_modules/router/lib/route.js:117:3)\n' +
+      '    at handle (/workspaces/somatic/server/node_modules/router/index.js:435:11)\n' +
+      '    at Layer.handleRequest (/workspaces/somatic/server/node_modules/router/lib/layer.js:152:17)\n' +
+      '    at /workspaces/somatic/server/node_modules/router/index.js:295:15\n' +
+      '    at processParams (/workspaces/somatic/server/node_modules/router/index.js:582:12)\n' +
+      '    at next (/workspaces/somatic/server/node_modules/router/index.js:291:5)\n' +
+      '    at file:///workspaces/somatic/server/node_modules/express-rate-limit/dist/index.mjs:870:7',
+    path: '/api/log-visit',
+    method: 'POST',
+    query: [Object: null prototype] {},
+    body: {
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      os: 'Win32',
+      deviceType: 'desktop',
+      screenResolution: '1366x768',
+      timezone: 'Asia/Karachi',
+      languages: 'en-US',
+      referrer: '',
+      latency: 351,
+      webrtcIPs: [ 'ad5448a2-a3b3-4f9a-aa24-f076520ee5db.local' ],
+      timestamp: '2025-09-24T15:38:47.863Z',
+      url: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/admin'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:5000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:5000',
+      referer: 'https://supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev/admin',
+      'x-request-id': '317aaf309a0df78d4dff17031fc1afe4',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'supreme-guide-r45gj4xxgj4v3xpvq-5000.app.github.dev',
+      'x-forwarded-for': '58.65.166.210',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '439'
+    },
+    ip: '58.65.166.210',
+    timestamp: '2025-09-24T15:38:49.631Z'
+  },
+  timestamp: '2025-09-24T15:38:49.631Z'
+}

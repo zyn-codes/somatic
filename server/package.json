@@ -3,19 +3,27 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "cd .. && npm run build && cd server && node index.js",
+    "dev": "node index.js"
+  },
   "dependencies": {
+    "axios": "^1.12.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
+    "express-validator": "^7.0.1",
+    "fs-extra": "^11.3.2",
     "geoip-lite": "^1.4.10",
     "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-cache": "^5.1.2",
     "request-ip": "^3.3.0",
     "socket.io": "^4.8.1",
-    "ua-parser-js": "^1.0.35",
-    "winston": "^3.11.0",
-    "express-validator": "^7.0.1",
-    "jsonwebtoken": "^9.0.2"
+    "ua-parser-js": "^1.0.41",
+    "winston": "^3.11.0"
   }
 }
