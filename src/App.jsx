@@ -37,6 +37,16 @@ function App() {
   useEffect(() => {
     document.title = 'Somatic Form';
     
+    // Load phone input styles dynamically
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/react-phone-number-input@3.2.11/style.css';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+    
     // Log page view when route changes
     logPageView(location.pathname);
 

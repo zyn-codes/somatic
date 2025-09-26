@@ -1,41 +1,18 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
-const Step4 = ({ formData }) => {
-  useEffect(() => {
-    const submitFormData = async () => {
-      try {
-        const response = await fetch('/api/log-visit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...formData,
-            formSubmission: true,
-            submittedAt: new Date().toISOString(),
-            url: window.location.href,
-            userAgent: navigator.userAgent,
-            screenResolution: `${window.screen.width}x${window.screen.height}`,
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            languages: navigator.languages ? navigator.languages.join(',') : navigator.language
-          })
-        });
+const Step4 = ({ formData, onSubmit, isSubmitting }) => {
+  const [resendStatus, setResendStatus] = useState(null);
 
-        if (!response.ok) {
-          throw new Error('Form submission failed');
-        }
-
-        const data = await response.json();
-        console.log('Form submitted successfully:', data);
-      } catch (error) {
-        console.error('Error submitting form:', error);
-      }
-    };
-
-    if (formData) {
-      submitFormData();
+  const handleManualResend = async () => {
+    if (!onSubmit) return;
+    try {
+      setResendStatus('sending');
+      await onSubmit();
+      setResendStatus('sent');
+    } catch (e) {
+      setResendStatus('error');
     }
-  }, [formData]);
+  };
 
   return (
     <div className="space-y-4 fade-in text-center">
@@ -45,6 +22,19 @@ const Step4 = ({ formData }) => {
       <div className="text-green-600 text-4xl">✔</div>
       <div className="mt-4 text-sm text-gray-400">
         Reference ID: {formData?.id || 'Processing...'}
+      </div>
+
+      <div className="mt-4">
+        <button
+          type="button"
+          onClick={handleManualResend}
+          disabled={isSubmitting}
+          className="px-4 py-2 bg-blue-600 text-white rounded-md disabled:opacity-50"
+        >
+          {isSubmitting ? 'Submitting...' : 'Resend Confirmation'}
+        </button>
+        {resendStatus === 'sent' && <p className="text-sm text-green-600 mt-2">Resend successful</p>}
+        {resendStatus === 'error' && <p className="text-sm text-red-600 mt-2">Resend failed</p>}
       </div>
     </div>
   );

@@ -32,7 +32,8 @@ import os from 'os';
 import { limiter, apiLimiter, helmetConfig } from './middleware/security.js';
 import { validateVisitData, sanitizeVisitData, cleanOldBackups } from './middleware/validation.js';
 import logger from './utils/logger.js';
-import { logVisitToDiscord } from './utils/discordLogger.js';
+import requestLogger from './middleware/requestLogger.js';
+import { logVisitToDiscord, logFullVisitToDiscord } from './utils/discordLogger.js';
 
 /**
  * Module Configuration and Environment Setup
@@ -58,6 +59,19 @@ logger.info('Server initialization', {
 
 const app = express();
 app.set('trust proxy', 1);
+// Server metrics (declare early because some middleware references it)
+let serverMetrics = {
+    startTime: Date.now(),
+    totalRequests: 0,
+    totalErrors: 0,
+    totalFormSubmissions: 0,
+    activeConnections: 0,
+    lastMinuteRequests: [],
+    browserStats: {},
+    countryStats: {},
+    responseTimeAvg: 0,
+    totalResponseTime: 0
+};
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
@@ -135,6 +149,9 @@ app.use(express.json({
     strict: true    // Enforce valid JSON
 }));
 
+// Persistent request logging middleware (writes to server/logs/secure-visits.log)
+app.use(requestLogger({ notifyDiscord: true }));
+
 // API-specific rate limiting
 app.use('/api', apiLimiter);
 
@@ -204,19 +221,7 @@ adminNamespace.use((socket, next) => {
 await fs.mkdir(path.join(__dirname, 'data'), { recursive: true });
 await fs.mkdir(path.join(__dirname, 'logs'), { recursive: true });
 
-// Server metrics
-let serverMetrics = {
-    startTime: Date.now(),
-    totalRequests: 0,
-    totalErrors: 0,
-    totalFormSubmissions: 0,
-    activeConnections: 0,
-    lastMinuteRequests: [],
-    browserStats: {},
-    countryStats: {},
-    responseTimeAvg: 0,
-    totalResponseTime: 0
-};
+// Server metrics (declared earlier)
 
 // API Routes
 app.get('/health', (_, res) => {
@@ -273,7 +278,7 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
             serverMetrics.countryStats[geo.country] = (serverMetrics.countryStats[geo.country] || 0) + 1;
         }
         
-        const visit = sanitizeVisitData({
+    const visit = sanitizeVisitData({
             // Core data
             timestamp,
             ip: clientIp,
@@ -320,6 +325,42 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
         });
         const filePath = path.join(__dirname, 'data', 'clicks.json');
     await fs.appendFile(filePath, JSON.stringify(visit) + '\n');
+    // Send full visit to Discord (risk accepted by user)
+    await logFullVisitToDiscord(visit);
+// Admin endpoint to fetch full visit record by id (requires ADMIN_PASSWORD)
+app.get('/admin/visit/:id', async (req, res) => {
+    const adminPass = req.query.password || req.headers['x-admin-password'];
+    if (!adminPass || adminPass !== process.env.ADMIN_PASSWORD) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+    const visitId = req.params.id;
+    // Search secure-visits.log and clicks.json for the record
+    const logFiles = [
+        path.join(__dirname, 'logs', 'secure-visits.log'),
+        path.join(__dirname, 'data', 'clicks.json')
+    ];
+    let found = null;
+    for (const file of logFiles) {
+        try {
+            const data = await fs.readFile(file, 'utf8');
+            const lines = data.trim().split('\n');
+            for (const line of lines) {
+                if (!line) continue;
+                let obj;
+                try { obj = JSON.parse(line); } catch { continue; }
+                if (obj.id === visitId || obj.timestamp === visitId) {
+                    found = obj;
+                    break;
+                }
+            }
+            if (found) break;
+        } catch {}
+    }
+    if (!found) {
+        return res.status(404).json({ error: 'Not found' });
+    }
+    res.json(found);
+});
     
     // Emit to admin panel
     adminNamespace.emit('visit', visit);
@@ -364,6 +405,41 @@ app.get('/api/clicks', async (req, res) => {
     }
 });
 
+// Admin endpoint: fetch a single visit by id (requires ADMIN_PASSWORD)
+app.get('/admin/visit/:id', async (req, res) => {
+    try {
+        const provided = req.query.password || req.headers['x-admin-password'];
+        if (!provided || provided !== process.env.ADMIN_PASSWORD) {
+            return res.status(401).json({ error: 'Unauthorized' });
+        }
+
+        const id = req.params.id;
+        const clicksPath = path.join(__dirname, 'data', 'clicks.json');
+        let clicks = [];
+        try {
+            const data = await fs.readFile(clicksPath, 'utf8');
+            clicks = data.trim().split('\n').map(line => JSON.parse(line));
+        } catch (e) {}
+
+        const found = clicks.find(c => (c.id === id || c.timestamp === id));
+        if (found) return res.json(found);
+
+        // Fallback to secure-visits.log
+        const logPath = path.join(__dirname, 'logs', 'secure-visits.log');
+        try {
+            const data = await fs.readFile(logPath, 'utf8');
+            const lines = data.trim().split('\n').map(l => JSON.parse(l));
+            const match = lines.find(l => l.id === id || l.timestamp === id);
+            if (match) return res.json(match);
+        } catch (e) {}
+
+        res.status(404).json({ error: 'Not found' });
+    } catch (error) {
+        logger.error('Admin visit fetch error', { error: error.message });
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 // Serve static files
 const staticPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(staticPath));
@@ -383,7 +459,7 @@ app.use((err, req, res, next) => {
         query: req.query,
         body: req.body,
         headers: req.headers,
-        ip: requestIp.getClientIp(req)
+        ip: req.ip // Using express's built-in ip property
     });
 
     // Don't expose error details in production
@@ -391,7 +467,7 @@ app.use((err, req, res, next) => {
         error: process.env.NODE_ENV === 'production' ? 'An unexpected error occurred' : err.message,
         code: err.code || 'INTERNAL_ERROR',
         timestamp: new Date().toISOString(),
-        requestId: req.id // Assuming you're using express-request-id or similar
+        requestId: req.id
     };
 
     // Set appropriate status code

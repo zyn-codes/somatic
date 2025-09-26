@@ -1,10 +1,6 @@
-import { describe, test, expect, vi, beforeAll, afterAll } from 'vitest';
-import supertest from 'supertest';
-import express from 'express';
-import { validateVisitData } from '../middleware/validation.js';
-import logger from '../utils/logger.js';
-import { logVisitToDiscord } from '../utils/discordLogger.js';
+import { describe, test, expect, vi, beforeAll, afterAll, beforeEach } from 'vitest';
 
+// Set up mocks before importing modules that use them
 vi.mock('../utils/logger.js', () => ({
     default: {
         info: vi.fn(),
@@ -17,6 +13,12 @@ vi.mock('../utils/logger.js', () => ({
 vi.mock('../utils/discordLogger.js', () => ({
     logVisitToDiscord: vi.fn()
 }));
+
+import supertest from 'supertest';
+import express from 'express';
+import { validateVisitData } from '../middleware/validation.js';
+import logger from '../utils/logger.js';
+import { logVisitToDiscord } from '../utils/discordLogger.js';
 
 describe('Visit Tracking Endpoint Integration Tests', () => {
     let app;
@@ -37,6 +39,10 @@ describe('Visit Tracking Endpoint Integration Tests', () => {
         });
 
         request = supertest(app);
+    });
+
+    beforeEach(() => {
+        vi.clearAllMocks();
     });
 
     afterAll(() => {
