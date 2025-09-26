@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node server/index.js",
-    "start:dev": "npm run build && node server/index.js",
+    "start": "cd server && node index.js",
+    "start:dev": "npm run build && cd server && node index.js",
     "test-admin-socket": "node server/test-admin-socket.js",
     "test": "vitest"
   },
