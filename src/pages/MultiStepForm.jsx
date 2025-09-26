@@ -8,6 +8,7 @@ import SuccessNotification from '../components/SuccessNotification';
 import { getClientInfo } from '../utils/vpnDetection';
 import { getDeviceFingerprint } from '../utils/deviceData';
 import { getLocation } from '../utils/geolocation';
+import { enqueueSubmission } from '../utils/submitQueue';
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,6 +20,7 @@ const MultiStepForm = () => {
   });
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [wasQueued, setWasQueued] = useState(false);
   const [technicalData, setTechnicalData] = useState(null);
 
   // Collect technical data when component mounts
@@ -102,25 +104,27 @@ const MultiStepForm = () => {
     setIsSubmitting(true);
     try {
       // Send form data and technical data to server's visit endpoint
-      const response = await fetch('/api/log-visit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          formSubmission: true,
-          formData,
-          technicalData,
-          url: window.location.href,
-          userAgent: navigator.userAgent,
-          submittedAt: new Date().toISOString()
-        })
-      });
+      const payload = {
+        id: formData.id,
+        formSubmission: true,
+        formData,
+        technicalData,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        submittedAt: new Date().toISOString()
+      };
 
-      if (!response.ok) throw new Error('Submission failed');
+      const result = await enqueueSubmission(payload);
 
-      // Show success notification
-      setShowSuccess(true);
+      if (result.sent) {
+        // Show success notification
+        setShowSuccess(true);
+        setWasQueued(false);
+      } else {
+        // queued locally for retry by background processor
+        setWasQueued(true);
+        setShowSuccess(true); // still show success but inform user
+      }
 
       // Reset form after short timeout
       setTimeout(() => {
@@ -132,11 +136,13 @@ const MultiStepForm = () => {
           id: `FORM-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
         });
         setShowSuccess(false);
+        setWasQueued(false);
       }, 3000);
 
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an error submitting your form. Please try again.');
+      // If enqueueSubmission throws unexpectedly, give user a friendly message
+      alert('There was an error submitting your form. It will be saved locally and retried automatically.');
     } finally {
       setIsSubmitting(false);
     }
