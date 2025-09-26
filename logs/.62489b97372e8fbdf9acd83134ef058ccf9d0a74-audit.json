@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/workspaces/somatic/logs/.62489b97372e8fbdf9acd83134ef058ccf9d0a74-audit.json",
+    "files": [
+        {
+            "date": 1758831473577,
+            "name": "/workspaces/somatic/logs/technical-2025-09-25.log",
+            "hash": "e180eda6973a845bbbab9cc1ee3fe669e586e3e118a1f7ed36ac58847280bac6"
+        }
+    ],
+    "hashType": "sha256"
+}

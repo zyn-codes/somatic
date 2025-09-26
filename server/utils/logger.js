@@ -1,20 +1,17 @@
 import winston from 'winston';
 import path from 'path';
 
-// Define log format
+// Define log format with better error handling
 const logFormat = winston.format.combine(
     winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.metadata(),
     winston.format.json()
 );
 
-// Enhanced logger configuration
+// Enhanced logger configuration with production-ready settings
 const logger = winston.createLogger({
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.errors({ stack: true }),
-        winston.format.metadata(),
-        winston.format.json()
-    ),
+    format: logFormat,
     defaultMeta: {
         service: 'somatic-server',
         environment: process.env.NODE_ENV || 'development',

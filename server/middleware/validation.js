@@ -11,9 +11,10 @@ import logger from '../utils/logger.js';
  * Validates and normalizes incoming visit data before processing.
  */
 export function validateVisitData(req, res, next) {
+    const startTime = Date.now();
     try {
         const { url, referrer, deviceType, screenResolution, timezone, languages, webrtcIPs } = req.body;
-
+        req.startTime = startTime;
         const errors = [];
 
         // URL validation with additional checks
