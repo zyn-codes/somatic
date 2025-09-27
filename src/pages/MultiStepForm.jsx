@@ -11,6 +11,7 @@ import { getLocation } from '../utils/geolocation';
 import { enqueueSubmission } from '../utils/submitQueue';
 
 const MultiStepForm = () => {
+  // Core state management
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     personalInfo: {},
@@ -47,6 +48,7 @@ const MultiStepForm = () => {
     collectTechnicalData();
   }, []);
 
+  // Form data management
   const updateFormData = (step, data) => {
     setFormData(prev => {
       const newData = { ...prev };
@@ -67,6 +69,7 @@ const MultiStepForm = () => {
     });
   };
 
+  // Form validation
   const validateStep = (step) => {
     switch(step) {
       case 1:
@@ -74,7 +77,6 @@ const MultiStepForm = () => {
         return firstName?.trim() && lastName?.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       case 2:
         const { phone } = formData.contactInfo || {};
-        // Check if phone is valid and has correct length
         return phone && phone.length >= 8 && phone.length <= 15 && /^\+?[\d\s-]+$/.test(phone);
       case 3:
         const { timezone, slot, agreements } = formData.appointmentDetails || {};
@@ -84,10 +86,10 @@ const MultiStepForm = () => {
     }
   };
 
+  // Navigation
   const nextStep = () => {
     if (currentStep < 4 && validateStep(currentStep)) {
       setCurrentStep(currentStep + 1);
-      console.log(`Navigated to Step ${currentStep + 1}`, formData);
     } else {
       alert('Please fill in all required fields correctly before proceeding.');
     }
@@ -96,14 +98,13 @@ const MultiStepForm = () => {
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-      console.log(`Navigated to Step ${currentStep - 1}`);
     }
   };
 
+  // Form submission
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      // Send form data and technical data to server's visit endpoint
       const payload = {
         id: formData.id,
         formSubmission: true,
@@ -117,16 +118,13 @@ const MultiStepForm = () => {
       const result = await enqueueSubmission(payload);
 
       if (result.sent) {
-        // Show success notification
         setShowSuccess(true);
         setWasQueued(false);
       } else {
-        // queued locally for retry by background processor
         setWasQueued(true);
-        setShowSuccess(true); // still show success but inform user
+        setShowSuccess(true);
       }
 
-      // Reset form after short timeout
       setTimeout(() => {
         setCurrentStep(1);
         setFormData({
@@ -141,7 +139,6 @@ const MultiStepForm = () => {
 
     } catch (error) {
       console.error('Form submission error:', error);
-      // If enqueueSubmission throws unexpectedly, give user a friendly message
       alert('There was an error submitting your form. It will be saved locally and retried automatically.');
     } finally {
       setIsSubmitting(false);
@@ -149,67 +146,65 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col justify-center items-center px-4 py-8">
-      <div className="max-w-4xl w-full bg-white dark:bg-gray-800 shadow-neumorphic rounded-lg p-8 transform transition-all duration-500 hover:shadow-lg">
-        <ProgressBar currentStep={currentStep} />
-        <div className="min-h-[400px] flex flex-col justify-between">
-          <div className="flex-1">
-            {currentStep === 1 && <Step1 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 2 && <Step2 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 3 && <Step3 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 4 && (
-              <Step4 
-                formData={formData} 
-                onSubmit={handleSubmit}
-                isSubmitting={isSubmitting}
-              />
-            )}
-          </div>
-          <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
-            {currentStep > 1 ? (
-              <button
-                onClick={prevStep}
-                className="bg-gray-500 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
-              >
-                ← Back
-              </button>
-            ) : <div />}
-            {currentStep < 4 && (
-              <button
-                onClick={nextStep}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md ml-auto"
-              >
-                Next →
-              </button>
-            )}
-          </div>
+    <div className="form-hero flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-3xl form-panel">
+        <div className="card-inner">
+          {/* Header */}
+          <header className="mb-8 text-center">
+            <h1 className="brand-header mb-2">
+              Please complete the following steps to book your free consultation call
+            </h1>
+            <p className="form-note">
+              We value your privacy and keep all information confidential.
+            </p>
+          </header>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
-            {currentStep > 1 && (
-              <button
-                onClick={prevStep}
-                className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-              >
-                Back
-              </button>
-            )}
-            {currentStep < 4 ? (
-              <button
-                onClick={nextStep}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ml-auto"
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-              </button>
-            )}
+          {/* Progress Bar */}
+          <ProgressBar currentStep={currentStep} />
+
+          {/* Form Steps Container */}
+          <div className="min-h-[400px] flex flex-col justify-between mt-8">
+            <div className="flex-1">
+              {currentStep === 1 && <Step1 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 2 && <Step2 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 3 && <Step3 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 4 && (
+                <Step4 
+                  formData={formData} 
+                  onSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                />
+              )}
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between gap-4 mt-8 pt-6 border-t border-white/10">
+              <div>
+                {currentStep > 1 && (
+                  <button onClick={prevStep} className="secondary-btn">
+                    ← Back
+                  </button>
+                )}
+              </div>
+
+              <div className="ml-auto">
+                {currentStep < 4 && (
+                  <button onClick={nextStep} className="primary-btn">
+                    Next →
+                  </button>
+                )}
+
+                {currentStep === 4 && (
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="primary-btn"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Book your free call now'}
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>

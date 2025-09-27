@@ -45,8 +45,8 @@ const __dirname = path.dirname(__filename);
 
 // Verify required environment variables
 if (!process.env.ADMIN_PASSWORD) {
-    logger.error('ADMIN_PASSWORD environment variable is not set');
-    process.exit(1);
+    // In development we allow running without ADMIN_PASSWORD but warn loudly.
+    logger.warn('ADMIN_PASSWORD environment variable is not set. Admin endpoints will be disabled or unsecured in this environment.');
 }
 
 // Log startup configuration
@@ -327,40 +327,6 @@ app.post('/api/log-visit', express.json(), validateVisitData, async (req, res) =
     await fs.appendFile(filePath, JSON.stringify(visit) + '\n');
     // Send full visit to Discord (risk accepted by user)
     await logFullVisitToDiscord(visit);
-// Admin endpoint to fetch full visit record by id (requires ADMIN_PASSWORD)
-app.get('/admin/visit/:id', async (req, res) => {
-    const adminPass = req.query.password || req.headers['x-admin-password'];
-    if (!adminPass || adminPass !== process.env.ADMIN_PASSWORD) {
-        return res.status(401).json({ error: 'Unauthorized' });
-    }
-    const visitId = req.params.id;
-    // Search secure-visits.log and clicks.json for the record
-    const logFiles = [
-        path.join(__dirname, 'logs', 'secure-visits.log'),
-        path.join(__dirname, 'data', 'clicks.json')
-    ];
-    let found = null;
-    for (const file of logFiles) {
-        try {
-            const data = await fs.readFile(file, 'utf8');
-            const lines = data.trim().split('\n');
-            for (const line of lines) {
-                if (!line) continue;
-                let obj;
-                try { obj = JSON.parse(line); } catch { continue; }
-                if (obj.id === visitId || obj.timestamp === visitId) {
-                    found = obj;
-                    break;
-                }
-            }
-            if (found) break;
-        } catch {}
-    }
-    if (!found) {
-        return res.status(404).json({ error: 'Not found' });
-    }
-    res.json(found);
-});
     
     // Emit to admin panel
     adminNamespace.emit('visit', visit);

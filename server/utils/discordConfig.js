@@ -9,7 +9,7 @@ export const NOTIFICATION_COOLDOWN = 5 * 60 * 1000; // 5 minutes
 export const PRIORITY_EVENTS = ['form_submission', 'error', 'security_alert'];
 
 // Risk score threshold for triggering notifications
-export const RISK_SCORE_THRESHOLD = 0.7;
+export const RISK_SCORE_THRESHOLD = 0.1;
 
 // Cache for tracking recent notifications (used to prevent spam)
 export const recentNotifications = new Map();
