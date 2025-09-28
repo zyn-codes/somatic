@@ -1,10 +1,23 @@
 // Enhanced submission queue with improved error handling and retry logic
-import { logError } from '../utils/logger';
+import { logError } from '../utils/analytics';
 
 const STORAGE_KEY = 'somatic:submissionQueue_v2';
 const MAX_RETRIES = 10;
 const MIN_BACKOFF = 1000; // 1 second
 const MAX_BACKOFF = 300000; // 5 minutes
+const MAX_QUEUE_SIZE = 100; // Prevent queue from growing too large
+const MAX_PAYLOAD_SIZE = 1024 * 1024; // 1MB
+const CLEANUP_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours
+
+// HTTP status codes that indicate retryable errors
+const RETRYABLE_STATUS_CODES = new Set([
+  408, // Request Timeout
+  429, // Too Many Requests
+  500, // Internal Server Error
+  502, // Bad Gateway
+  503, // Service Unavailable
+  504  // Gateway Timeout
+]);
 
 let processorStarted = false;
 let onlineStatus = navigator.onLine;
@@ -61,6 +74,25 @@ class QueueStorage {
 
   static push(item) {
     const queue = this.read();
+    
+    // Enforce queue size limit
+    if (queue.length >= MAX_QUEUE_SIZE) {
+      // Remove oldest items if queue is full
+      queue.splice(0, queue.length - MAX_QUEUE_SIZE + 1);
+      logError('Queue size limit reached, removing oldest items');
+    }
+
+    // Check payload size
+    const payloadSize = new TextEncoder().encode(JSON.stringify(item.payload)).length;
+    if (payloadSize > MAX_PAYLOAD_SIZE) {
+      logError('Payload size exceeds limit', { 
+        size: payloadSize, 
+        limit: MAX_PAYLOAD_SIZE,
+        id: item.id 
+      });
+      throw new Error('Payload size exceeds limit');
+    }
+
     queue.push(item);
     this.write(queue);
   }
@@ -138,19 +170,35 @@ async function sendToBackend(payload, { timeout = 25000, retryAttempt = 0 } = {}
 
   } catch (error) {
     const isTimeout = error.name === 'AbortError';
-    const isNetwork = !navigator.onLine || error.message.includes('NetworkError');
+    const isNetwork = !navigator.onLine || 
+      error.message.includes('NetworkError') || 
+      error.message.includes('Failed to fetch');
+    const isRetryableStatus = error.status && RETRYABLE_STATUS_CODES.has(error.status);
     
+    // Check for connection/DNS issues
+    const isConnectionIssue = error.message.includes('ECONNREFUSED') || 
+      error.message.includes('ENOTFOUND') ||
+      error.message.includes('getaddrinfo');
+    
+    // Check for CORS/TLS issues
+    const isSecurityIssue = error.message.includes('SSL') || 
+      error.message.includes('TLS') ||
+      error.message.includes('CORS');
+
     logError('Backend submission failed', { 
       error,
       isTimeout,
       isNetwork,
+      isRetryableStatus,
+      isConnectionIssue,
+      isSecurityIssue,
       retryAttempt,
       endpoint 
     });
 
     return { 
       success: false, 
-      retryable: isTimeout || isNetwork || error.status === 429,
+      retryable: isTimeout || isNetwork || isRetryableStatus || isConnectionIssue,
       error 
     };
   }
@@ -254,9 +302,31 @@ async function processQueueOnce() {
 }
 
 // Enhanced queue starter with network status handling
+// Clean up old queue items periodically
+function cleanupQueue() {
+  const queue = QueueStorage.read();
+  const now = Date.now();
+  const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const filtered = queue.filter(item => {
+    const age = now - new Date(item.createdAt).getTime();
+    return age < maxAge;
+  });
+
+  if (filtered.length < queue.length) {
+    logError('Cleaned up old queue items', { 
+      removed: queue.length - filtered.length 
+    });
+    QueueStorage.write(filtered);
+  }
+}
+
 export function startSubmissionQueue({ intervalMs = 30000 } = {}) {
   if (processorStarted) return;
   processorStarted = true;
+
+  // Add periodic queue cleanup
+  setInterval(cleanupQueue, CLEANUP_INTERVAL);
 
   // Monitor network status
   window.addEventListener('online', () => {

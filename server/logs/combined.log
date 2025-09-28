@@ -94,3 +94,5138 @@
 {"level":"info","message":"Visit logged to Discord successfully","metadata":{"environment":"development","nodeVersion":"v22.17.0","service":"somatic-server","timestamp":"2025-09-26T17:00:05.639Z","type":"form_submission","visitId":"FORM-1758905971034-dt61zmf4z"}}
 {"level":"info","message":"Successfully sent visit to Discord webhook","metadata":{"environment":"development","nodeVersion":"v22.17.0","service":"somatic-server","timestamp":"2025-09-26T17:00:05.640Z","type":"form_submission","visitId":"2025-09-26T17:00:04.618Z"}}
 {"level":"info","message":"Request completed","metadata":{"duration":1026,"environment":"development","method":"POST","nodeVersion":"v22.17.0","requestId":"req-1758906004615-9f3qh8fva","service":"somatic-server","status":200,"timestamp":"2025-09-26T17:00:05.642Z","url":"/api/log-visit"}}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 226004992,
+      heapTotal: 31191040,
+      heapUsed: 16404224,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-27 20:45:05.647'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-27 20:45:05.666'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759005945087-2yqkto1tk',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-27 20:45:45.096'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 20:45:45.608'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T20:45:45.089Z',
+    type: 'page_visit',
+    timestamp: '2025-09-27 20:45:45.609'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759005947126-76si9gic6',
+    method: 'GET',
+    url: '/assets/index-zb2Ew7SV.js',
+    duration: 17,
+    status: 200,
+    timestamp: '2025-09-27 20:45:47.143'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759005947296-ejg4l8ijr',
+    method: 'GET',
+    url: '/assets/index-DLeCuTkf.css',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-27 20:45:47.300'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759005951950-b15d57378',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-27 20:45:51.953'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 229494784,
+      heapTotal: 31191040,
+      heapUsed: 16425752,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-27 20:56:28.632'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-27 20:56:28.645'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006600691-lfwy21lqo',
+    method: 'GET',
+    url: '/',
+    duration: 12,
+    status: 200,
+    timestamp: '2025-09-27 20:56:40.703'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 20:56:41.247'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T20:56:40.693Z',
+    type: 'page_visit',
+    timestamp: '2025-09-27 20:56:41.248'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006602731-zdzn2tnuy',
+    method: 'GET',
+    url: '/assets/index-DLeCuTkf.css',
+    duration: 10,
+    status: 200,
+    timestamp: '2025-09-27 20:56:42.741'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006602735-f4sfjhaso',
+    method: 'GET',
+    url: '/assets/index-YiIHHJM9.js',
+    duration: 15,
+    status: 200,
+    timestamp: '2025-09-27 20:56:42.750'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 229261312,
+      heapTotal: 31191040,
+      heapUsed: 16420176,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-27 21:02:55.355'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-27 21:02:55.368'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006982572-92ucswvqt',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-27 21:03:02.581'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 21:03:03.082'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T21:03:02.573Z',
+    type: 'page_visit',
+    timestamp: '2025-09-27 21:03:03.083'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006984459-v0wccz52w',
+    method: 'GET',
+    url: '/assets/index-Btuya0g1.js',
+    duration: 8,
+    status: 200,
+    timestamp: '2025-09-27 21:03:04.467'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759006984580-jjta79xo0',
+    method: 'GET',
+    url: '/assets/index-DLeCuTkf.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-27 21:03:04.583'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759007000377-oyvehj15l',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 3,
+    status: 404,
+    timestamp: '2025-09-27 21:03:20.380'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 228474880,
+      heapTotal: 15986688,
+      heapUsed: 14156984,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-27 22:56:57.542'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-27 22:56:57.556'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013861781-fp27hrw09',
+    method: 'GET',
+    url: '/',
+    duration: 46,
+    status: 200,
+    timestamp: '2025-09-27 22:57:41.827'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 22:57:42.330'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T22:57:41.783Z',
+    type: 'page_visit',
+    timestamp: '2025-09-27 22:57:42.331'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013863820-gn1al7eun',
+    method: 'GET',
+    url: '/assets/index-9455b334.js',
+    duration: 17,
+    status: 200,
+    timestamp: '2025-09-27 22:57:43.837'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013863815-ubidav4bl',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js',
+    duration: 25,
+    status: 200,
+    timestamp: '2025-09-27 22:57:43.840'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013863832-ho5m7x6uv',
+    method: 'GET',
+    url: '/assets/index-149b7729.css',
+    duration: 15,
+    status: 200,
+    timestamp: '2025-09-27 22:57:43.847'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013863828-msnlktpz1',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js',
+    duration: 21,
+    status: 200,
+    timestamp: '2025-09-27 22:57:43.849'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013872928-5fohtqs8c',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-27 22:57:52.930'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013883664-nnonisd7e',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js.map',
+    duration: 7,
+    status: 200,
+    timestamp: '2025-09-27 22:58:03.671'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013883753-hlil0opty',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js.map',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-27 22:58:03.759'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013885004-nknk6wsfl',
+    method: 'GET',
+    url: '/assets/index-149b7729.css',
+    duration: 3,
+    status: 304,
+    timestamp: '2025-09-27 22:58:05.007'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013885111-7xg4fa59s',
+    method: 'GET',
+    url: '/assets/index-9455b334.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-27 22:58:05.115'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013887065-7duebqm21',
+    method: 'GET',
+    url: '/',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:07.067'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013888927-oco9sanhs',
+    method: 'GET',
+    url: '/assets/index-149b7729.css',
+    duration: 4,
+    status: 304,
+    timestamp: '2025-09-27 22:58:08.931'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013888942-j476s8zw3',
+    method: 'GET',
+    url: '/assets/index-9455b334.js',
+    duration: 3,
+    status: 304,
+    timestamp: '2025-09-27 22:58:08.945'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013890255-vxjuhmapv',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:10.257'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013890398-mnk1odqz3',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:10.400'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013891102-etvzu1b4n',
+    method: 'GET',
+    url: '/assets/index-9455b334.js.map',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:11.104'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013892635-o67ah6unx',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js.map',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:12.637'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013893570-ed1xx5rln',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js.map',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-27 22:58:13.572'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759013896481-higlwgp32',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-27 22:58:16.483'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit data validated',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014022538-e7ts1vjcs',
+    ip: '103.19.49.128',
+    url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+    type: 'page_visit',
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    validationTime: 0,
+    timestamp: '2025-09-27 23:00:22.539'
+  }
+}
+{
+  level: 'info',
+  message: 'Received visit data:',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    body: {
+      id: 'FORM-1759013893832-o4j1y8f8n',
+      formSubmission: true,
+      formData: {
+        personalInfo: {
+          firstName: 'fgfgf',
+          lastName: 'dfgdf',
+          email: 'mr.walter.hartwell.white.69@gmail.com'
+        },
+        contactInfo: { phone: '+156565656', isVip: true, message: 'fdfddf' },
+        appointmentDetails: {
+          timezone: 'America/Chicago',
+          slot: '1',
+          agreements: { terms: true }
+        },
+        id: 'FORM-1759013893832-o4j1y8f8n'
+      },
+      technicalData: {
+        client: {
+          device: {
+            userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+            platform: 'Win32',
+            vendor: 'Google Inc.',
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            doNotTrack: '1',
+            cookieEnabled: true,
+            screen: {
+              width: 1280,
+              height: 800,
+              colorDepth: 24,
+              pixelRatio: 2.0000000596046448
+            }
+          },
+          browser: {
+            product: 'Gecko',
+            appName: 'Netscape',
+            appVersion: '5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+            hardwareConcurrency: 4,
+            maxTouchPoints: 1,
+            pdfViewerEnabled: false,
+            plugins: []
+          },
+          network: {},
+          vpn: {
+            fingerprints: {
+              webRTC: false,
+              timezone: false,
+              screen: false,
+              userAgent: true,
+              canvas: false,
+              plugins: true
+            },
+            score: 40,
+            isSuspicious: true
+          },
+          webrtc: {
+            hasIPMismatch: false,
+            ips: [ 'c3f65048-c441-401b-a28b-7a616d48f6f4.local' ],
+            publicIPs: []
+          },
+          timestamp: '2025-09-27T22:58:14.930Z'
+        },
+        device: {
+          browser: {
+            parser: {
+              name: 'Brave',
+              version: '140.0.0.0',
+              engine: 'Blink',
+              engineVersion: '140.0.0.0'
+            },
+            clientHints: [
+              { brand: 'Chromium', version: '140' },
+              { brand: 'Not=A?Brand', version: '24' },
+              { brand: 'Brave', version: '140' }
+            ],
+            platform: 'Android',
+            vendor: 'Google Inc.',
+            userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36'
+          },
+          os: {
+            name: 'Brave',
+            version: '140.0.0.0',
+            platform: 'Android',
+            appVersion: '5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+            architecture: 'Android',
+            mobile: true,
+            windows: false,
+            mac: false,
+            linux: true,
+            ios: false,
+            android: true
+          },
+          device: {
+            type: 'mobile',
+            vendor: 'Google Inc.',
+            touch: true,
+            orientation: { type: 'portrait-primary', angle: 0 },
+            battery: {},
+            mediaDevices: [],
+            permissions: []
+          },
+          screen: {
+            width: 1280,
+            height: 800,
+            availWidth: 1280,
+            availHeight: 800,
+            colorDepth: 24,
+            pixelRatio: 2.0000000596046448,
+            orientation: { type: 'landscape-primary', angle: 0 }
+          },
+          system: {
+            deviceMemory: 4,
+            hardwareConcurrency: 4,
+            jsHeapSizeLimit: 2248146944,
+            totalJSHeapSize: 10023093,
+            usedJSHeapSize: 8142053,
+            timing: {
+              loadEventEnd: 3865,
+              domInteractive: 2045,
+              domContentLoaded: 3864,
+              firstPaint: 3968
+            },
+            gpuMemory: {
+              maxTextureSize: 16384,
+              maxViewportDims: { '0': 32767, '1': 32767 },
+              maxRenderbufferSize: 16384
+            },
+            gpuVendor: 'Google Inc. (Intel)',
+            gpuRenderer: 'ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)',
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            platform: 'Android'
+          },
+          locale: {
+            timezone: 'Asia/Karachi',
+            timezoneOffset: -300,
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            dateFormat: {
+              locale: 'en-US',
+              calendar: 'gregory',
+              numberingSystem: 'latn',
+              timeZone: 'Asia/Karachi',
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric'
+            }
+          },
+          features: {
+            cookies: true,
+            localStorage: true,
+            sessionStorage: true,
+            webGL: true,
+            webWorkers: {},
+            serviceWorkers: true,
+            notifications: true,
+            geolocation: true,
+            bluetooth: true,
+            usb: true,
+            nfc: false
+          },
+          network: null,
+          online: true,
+          timestamp: '2025-09-27T22:58:14.538Z',
+          userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+          fingerprints: {
+            primary: [ '12d6a201705823460dd0e434312da93d' ],
+            canvas: '543082649ab324aed040584422da1cfe',
+            audio: '543082649ab324aed040584422da1cfe',
+            composite: '543082649ab324aed040584422da1cfe'
+          }
+        },
+        location: {
+          browser: {
+            source: 'browser',
+            error: { code: 1, message: 'User denied Geolocation' }
+          },
+          ip: {
+            source: 'ip',
+            error: { message: 'Failed to fetch IP location' }
+          },
+          timestamp: '2025-09-27T22:58:16.257Z',
+          locationMismatch: false
+        },
+        timestamp: '2025-09-27T22:58:16.258Z',
+        collectionStatus: { clientInfo: true, deviceInfo: true, locationInfo: true }
+      },
+      url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      submittedAt: '2025-09-27T23:00:18.552Z'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:3000',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      'x-request-id': 'ded689dfe36a2c1a5243bb37556cd02a',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'x-retry-attempt': '0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '4416'
+    },
+    timestamp: '2025-09-27 23:00:22.540'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 2273,
+    payloadType: 'Somatic Full Logger',
+    timestamp: '2025-09-27 23:00:22.998'
+  }
+}
+{
+  level: 'info',
+  message: 'Full visit data sent to Discord',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: 'FORM-1759013893832-o4j1y8f8n',
+    dataLength: 7949,
+    truncated: true,
+    timestamp: '2025-09-27 23:00:22.999'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 1709,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 23:00:23.533'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: 'FORM-1759013893832-o4j1y8f8n',
+    type: 'form_submission',
+    timestamp: '2025-09-27 23:00:23.534'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent visit to Discord webhook',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T23:00:22.542Z',
+    type: 'form_submission',
+    timestamp: '2025-09-27 23:00:23.534'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014022538-e7ts1vjcs',
+    method: 'POST',
+    url: '/api/log-visit',
+    duration: 997,
+    status: 200,
+    timestamp: '2025-09-27 23:00:23.536'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 236904448,
+      heapTotal: 30928896,
+      heapUsed: 16439144,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-27 23:15:07.764'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-27 23:15:07.777'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014917478-s8x6n8ata',
+    method: 'GET',
+    url: '/',
+    duration: 14,
+    status: 200,
+    timestamp: '2025-09-27 23:15:17.494'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 23:15:17.973'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T23:15:17.480Z',
+    type: 'page_visit',
+    timestamp: '2025-09-27 23:15:17.974'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014919344-d945jvhdf',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-27 23:15:19.348'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014919513-0sq03knxw',
+    method: 'GET',
+    url: '/assets/index-6701b549.js',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-27 23:15:19.520'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014919615-qyukanj15',
+    method: 'GET',
+    url: '/assets/index-149b7729.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-27 23:15:19.618'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014919635-00khz7ifg',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-27 23:15:19.638'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014927021-veiqzmsm4',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-27 23:15:27.023'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit data validated',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014954724-s2v9muk9i',
+    ip: '103.19.49.128',
+    url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+    type: 'page_visit',
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    validationTime: 0,
+    timestamp: '2025-09-27 23:15:54.726'
+  }
+}
+{
+  level: 'info',
+  message: 'Received visit data:',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    body: {
+      id: 'FORM-1759014923770-960sdfdqw',
+      formSubmission: true,
+      formData: {
+        personalInfo: {
+          firstName: 'jhhjh',
+          lastName: 'dgfh',
+          email: 'mr.walter.hartwell.white.69@gmail.com'
+        },
+        contactInfo: { phone: '+17878787878', message: 'jhjhjhjh', isVip: true },
+        appointmentDetails: {
+          slot: '2',
+          timezone: 'America/New_York',
+          agreements: { terms: true }
+        },
+        id: 'FORM-1759014923770-960sdfdqw'
+      },
+      technicalData: {
+        client: {
+          device: {
+            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+            platform: 'Win32',
+            vendor: 'Google Inc.',
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            doNotTrack: '1',
+            cookieEnabled: true,
+            screen: {
+              width: 1366,
+              height: 768,
+              colorDepth: 24,
+              pixelRatio: 1.5
+            }
+          },
+          browser: {
+            product: 'Gecko',
+            appName: 'Netscape',
+            appVersion: '5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+            hardwareConcurrency: 4,
+            maxTouchPoints: 0,
+            pdfViewerEnabled: true,
+            plugins: [
+              'VOm6lSwB',
+              'Microsoft Edge PDF Viewer',
+              'WebKit built-in PDF',
+              'PDF and PS Viewer',
+              'pzZrVxg',
+              'PDF Viewer',
+              'Chromium PDF Viewer'
+            ]
+          },
+          network: {},
+          vpn: {
+            fingerprints: {
+              webRTC: false,
+              timezone: false,
+              screen: false,
+              userAgent: false,
+              canvas: false,
+              plugins: false
+            },
+            score: 0,
+            isSuspicious: false
+          },
+          webrtc: {
+            hasIPMismatch: false,
+            ips: [ '84ff3355-c293-41ff-84f8-8f13c4c2e2a7.local' ],
+            publicIPs: []
+          },
+          timestamp: '2025-09-27T23:15:24.950Z'
+        },
+        device: {
+          browser: {
+            parser: {
+              name: 'Brave',
+              version: '140.0.0.0',
+              engine: 'Blink',
+              engineVersion: '140.0.0.0'
+            },
+            clientHints: [
+              { brand: 'Chromium', version: '140' },
+              { brand: 'Not=A?Brand', version: '24' },
+              { brand: 'Brave', version: '140' }
+            ],
+            platform: 'Windows',
+            vendor: 'Google Inc.',
+            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+          },
+          os: {
+            name: 'Brave',
+            version: '140.0.0.0',
+            platform: 'Windows',
+            appVersion: '5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+            architecture: 'Windows',
+            mobile: false,
+            windows: true,
+            mac: false,
+            linux: false,
+            ios: false,
+            android: false
+          },
+          device: {
+            type: 'desktop',
+            vendor: 'Google Inc.',
+            touch: false,
+            orientation: { type: 'landscape-primary', angle: 0 },
+            battery: {},
+            mediaDevices: [],
+            permissions: []
+          },
+          screen: {
+            width: 1366,
+            height: 768,
+            availWidth: 1366,
+            availHeight: 768,
+            colorDepth: 24,
+            pixelRatio: 1.5,
+            orientation: { type: 'landscape-primary', angle: 0 }
+          },
+          system: {
+            deviceMemory: 4,
+            hardwareConcurrency: 4,
+            jsHeapSizeLimit: 2248146944,
+            totalJSHeapSize: 4785806,
+            usedJSHeapSize: 3978022,
+            timing: {
+              loadEventEnd: 8549,
+              domInteractive: 5247,
+              domContentLoaded: 8549,
+              firstPaint: 8672
+            },
+            gpuMemory: {
+              maxTextureSize: 16384,
+              maxViewportDims: { '0': 32767, '1': 32767 },
+              maxRenderbufferSize: 16384
+            },
+            gpuVendor: 'Google Inc. (Intel)',
+            gpuRenderer: 'ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)',
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            platform: 'Windows'
+          },
+          locale: {
+            timezone: 'Asia/Karachi',
+            timezoneOffset: -300,
+            language: 'en-US',
+            languages: [ 'en-US' ],
+            dateFormat: {
+              locale: 'en-US',
+              calendar: 'gregory',
+              numberingSystem: 'latn',
+              timeZone: 'Asia/Karachi',
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric'
+            }
+          },
+          features: {
+            cookies: true,
+            localStorage: true,
+            sessionStorage: true,
+            webGL: true,
+            webWorkers: {},
+            serviceWorkers: true,
+            notifications: true,
+            geolocation: true,
+            bluetooth: true,
+            usb: true,
+            nfc: false
+          },
+          network: null,
+          online: true,
+          timestamp: '2025-09-27T23:15:24.549Z',
+          userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+          fingerprints: {
+            primary: [ '976f3b16543bd21ca4012482c085d185' ],
+            canvas: '543082649ab324aed040584422da1cfe',
+            audio: '543082649ab324aed040584422da1cfe',
+            composite: '543082649ab324aed040584422da1cfe'
+          }
+        },
+        location: {
+          browser: {
+            source: 'browser',
+            error: { code: 1, message: 'User denied Geolocation' }
+          },
+          ip: {
+            source: 'ip',
+            error: { message: 'Failed to fetch IP location' }
+          },
+          timestamp: '2025-09-27T23:15:26.774Z',
+          locationMismatch: false
+        },
+        deepFingerprint: {
+          audio: null,
+          voices: null,
+          webgl: {
+            supported: true,
+            vendor: 'Google Inc. (Intel)',
+            renderer: 'ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)',
+            version: 'WebGL 1.0 (OpenGL ES 2.0 Chromium)',
+            shadingLanguageVersion: 'WebGL GLSL ES 1.0 (OpenGL ES GLSL ES 1.0 Chromium)',
+            supportedExtensions: [
+              'ANGLE_instanced_arrays',
+              'EXT_blend_minmax',
+              'EXT_clip_control',
+              'EXT_color_buffer_half_float',
+              'EXT_depth_clamp',
+              'EXT_disjoint_timer_query',
+              'EXT_float_blend',
+              'EXT_frag_depth',
+              'EXT_polygon_offset_clamp',
+              'EXT_shader_texture_lod',
+              'EXT_texture_compression_bptc',
+              'EXT_texture_compression_rgtc',
+              'EXT_texture_filter_anisotropic',
+              'EXT_texture_mirror_clamp_to_edge',
+              'EXT_sRGB',
+              'KHR_parallel_shader_compile',
+              'OES_element_index_uint',
+              'OES_fbo_render_mipmap',
+              'OES_standard_derivatives',
+              'OES_texture_float',
+              'OES_texture_float_linear',
+              'OES_texture_half_float',
+              'OES_texture_half_float_linear',
+              'OES_vertex_array_object',
+              'WEBGL_blend_func_extended',
+              'WEBGL_color_buffer_float',
+              'WEBGL_compressed_texture_s3tc',
+              'WEBGL_compressed_texture_s3tc_srgb',
+              'WEBGL_debug_renderer_info',
+              'WEBGL_debug_shaders',
+              'WEBGL_depth_texture',
+              'WEBGL_draw_buffers',
+              'WEBGL_lose_context',
+              'WEBGL_multi_draw',
+              'WEBGL_polygon_mode'
+            ]
+          },
+          codecs: {
+            'video/ogg; codecs="theora"': false,
+            'video/mp4; codecs="avc1.42E01E"': true,
+            'video/webm; codecs="vp8, vorbis"': true,
+            'video/webm; codecs="vp9"': true,
+            'video/webm; codecs="av1"': false,
+            'video/x-matroska; codecs="avc1"': false,
+            'audio/ogg; codecs="vorbis"': true,
+            'audio/mp4; codecs="mp4a.40.2"': true,
+            'audio/mpeg': true,
+            'audio/webm; codecs="opus"': true,
+            'audio/wav': true
+          }
+        },
+        timestamp: '2025-09-27T23:15:26.774Z',
+        collectionStatus: {
+          clientInfo: true,
+          deviceInfo: true,
+          locationInfo: true,
+          deepFingerprint: true
+        }
+      },
+      url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      submittedAt: '2025-09-27T23:15:52.529Z'
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:3000',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      'x-request-id': '3ba8bf424157fbe9e14e8d15d80dfc64',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'x-retry-attempt': '0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '6062'
+    },
+    timestamp: '2025-09-27 23:15:54.726'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 2272,
+    payloadType: 'Somatic Full Logger',
+    timestamp: '2025-09-27 23:15:55.183'
+  }
+}
+{
+  level: 'info',
+  message: 'Full visit data sent to Discord',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: 'FORM-1759014923770-960sdfdqw',
+    dataLength: 10310,
+    truncated: true,
+    timestamp: '2025-09-27 23:15:55.183'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 1706,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-27 23:15:55.812'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: 'FORM-1759014923770-960sdfdqw',
+    type: 'form_submission',
+    timestamp: '2025-09-27 23:15:55.812'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent visit to Discord webhook',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-27T23:15:54.729Z',
+    type: 'form_submission',
+    timestamp: '2025-09-27 23:15:55.812'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759014954724-s2v9muk9i',
+    method: 'POST',
+    url: '/api/log-visit',
+    duration: 1089,
+    status: 200,
+    timestamp: '2025-09-27 23:15:55.814'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 228487168,
+      heapTotal: 17035264,
+      heapUsed: 13990480,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 03:08:36.591'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 03:08:36.606'
+  }
+}
+{
+  level: 'error',
+  message: 'Unhandled error',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    error: "ENOENT: no such file or directory, stat '/workspaces/somatic/dist/index.html'",
+    stack: "Error: ENOENT: no such file or directory, stat '/workspaces/somatic/dist/index.html'",
+    path: '/',
+    method: 'GET',
+    query: {},
+    body: {},
+    headers: {
+      accept: 'text/html, application/xhtml+xml, application/xml; q=0.9, image/avif, image/webp, image/apng, */*; q=0.8',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      'cache-control': 'max-age=0',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg.github.dev/',
+      'x-request-id': '15279dd790fd14665baacdd2cb5c5106',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/',
+      'x-scheme': 'https',
+      dnt: '1',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-site',
+      'sec-fetch-mode': 'navigate',
+      'sec-fetch-dest': 'document',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      'sec-ch-ua-mobile': '?0',
+      'sec-ch-ua-platform': '"Windows"',
+      priority: 'u=0, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive'
+    },
+    ip: '103.19.49.128',
+    timestamp: '2025-09-28 03:08:52.469'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028932415-doaqbeqgp',
+    method: 'GET',
+    url: '/',
+    duration: 88,
+    status: 404,
+    timestamp: '2025-09-28 03:08:52.504'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 03:08:53.163'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T03:08:52.424Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 03:08:53.164'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028941005-6uy76bxzr',
+    method: 'GET',
+    url: '/',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 03:09:01.009'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028942749-3dc1t9ujo',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 03:09:02.753'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028942765-e1nzeext9',
+    method: 'GET',
+    url: '/assets/index-6549071e.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 03:09:02.768'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028942972-daw4fz3a0',
+    method: 'GET',
+    url: '/assets/index-d1a86f0a.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 03:09:02.975'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028942982-dlxb0dxpf',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 03:09:02.985'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028951133-hdmfjn2q8',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 4,
+    status: 404,
+    timestamp: '2025-09-28 03:09:11.137'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028981794-vb4jb1jp3',
+    method: 'GET',
+    url: '/assets/index-d1a86f0a.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 03:09:41.798'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028982662-hb7sqw4a9',
+    method: 'GET',
+    url: '/assets/index-6549071e.css',
+    duration: 7,
+    status: 304,
+    timestamp: '2025-09-28 03:09:42.669'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028983102-1gej4xzhr',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 03:09:43.106'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759028983305-j9279ftsk',
+    method: 'GET',
+    url: '/assets/form-c150c7ac.js.map',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 03:09:43.311'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 227753984,
+      heapTotal: 15986688,
+      heapUsed: 14299480,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 11:41:34.836'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 11:41:34.849'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059731588-tw0lsd2ne',
+    method: 'GET',
+    url: '/',
+    duration: 11,
+    status: 200,
+    timestamp: '2025-09-28 11:42:11.599'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:42:12.078'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:42:11.590Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 11:42:12.079'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059733469-a98gz7bjc',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js',
+    duration: 8,
+    status: 200,
+    timestamp: '2025-09-28 11:42:13.477'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059733571-vgupryfco',
+    method: 'GET',
+    url: '/assets/index-542c97d5.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 11:42:13.575'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059733637-q4yy2w4kl',
+    method: 'GET',
+    url: '/assets/form-4b7072bc.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 11:42:13.642'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059735514-fxf6szqf2',
+    method: 'GET',
+    url: '/assets/index-c6479e96.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:42:15.517'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059738725-ep1qnehf3',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:42:18.728'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059739881-k7uyg83vy',
+    method: 'GET',
+    url: '/assets/waterfall.jpg',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:42:19.884'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059754053-z0grolrcu',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 11:42:34.055'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059760437-5e8jl37n2',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 3,
+    status: 404,
+    timestamp: '2025-09-28 11:42:40.440'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059776484-rus57p8vu',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 11:42:56.486'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059776517-lv4l9gpbm',
+    method: 'GET',
+    url: '/assets/waterfall.jpg',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 11:42:56.518'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059801407-czg8or3g1',
+    method: 'GET',
+    url: '/assets/form-4b7072bc.js.map',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:43:21.410'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059801412-qy3yqcale',
+    method: 'GET',
+    url: '/assets/index-542c97d5.js.map',
+    duration: 14,
+    status: 200,
+    timestamp: '2025-09-28 11:43:21.426'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059802584-iz6spr6wa',
+    method: 'GET',
+    url: '/assets/index-c6479e96.css',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 11:43:22.585'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059802982-zirkrh0n5',
+    method: 'GET',
+    url: '/assets/vendor-520209d8.js.map',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:43:22.985'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059809809-el395v24d',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 11:43:29.811'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059810069-m1xmx7ox4',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 11:43:30.071'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit data validated',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059827873-bdiojf6cu',
+    ip: '103.19.49.128',
+    url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+    type: 'error',
+    userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+    validationTime: 0,
+    timestamp: '2025-09-28 11:43:47.874'
+  }
+}
+{
+  level: 'info',
+  message: 'Received visit data:',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    body: {
+      type: 'error',
+      error: "Cannot read properties of undefined (reading 'phone')",
+      name: 'TypeError',
+      stack: "TypeError: Cannot read properties of undefined (reading 'phone')\n" +
+        '    at td (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:8807)\n' +
+        '    at ou (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:60224)\n' +
+        '    at ds (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:119149)\n' +
+        '    at ic (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108374)\n' +
+        '    at oc (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108302)\n' +
+        '    at lc (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108165)\n' +
+        '    at qs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:105000)\n' +
+        '    at Gs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:105382)\n' +
+        '    at Rl (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:46573)\n' +
+        '    at https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:102950',
+      componentStack: '\n' +
+        '    at td (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:8263)\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at lf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:60524)\n' +
+        '    at af (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:57067)\n' +
+        '    at cf\n' +
+        '    at Qf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:5671)\n' +
+        '    at Zf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:7199)\n' +
+        '    at af (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:57067)\n' +
+        '    at _m (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:116785)\n' +
+        '    at Jf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:6583)\n' +
+        '    at ad (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:51:476)',
+      url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      timestamp: '2025-09-28T11:43:44.967Z',
+      userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+      viewport: { width: 400, height: 504 },
+      retryCount: 0
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:3000',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      'x-request-id': 'dd624a9ad450efb5d89a49eabe97077d',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Android"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?1',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '2818'
+    },
+    timestamp: '2025-09-28 11:43:47.874'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 2242,
+    payloadType: 'Somatic Full Logger',
+    timestamp: '2025-09-28 11:43:48.424'
+  }
+}
+{
+  level: 'info',
+  message: 'Full visit data sent to Discord',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:44.967Z',
+    dataLength: 4208,
+    truncated: true,
+    timestamp: '2025-09-28 11:43:48.425'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 687,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:43:48.857'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:44.967Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:43:48.858'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent visit to Discord webhook',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:44.967Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:43:48.858'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059827873-bdiojf6cu',
+    method: 'POST',
+    url: '/api/log-visit',
+    duration: 986,
+    status: 200,
+    timestamp: '2025-09-28 11:43:48.860'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059831427-vcgibbrz1',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 1,
+    status: 404,
+    timestamp: '2025-09-28 11:43:51.428'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit data validated',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059839011-hyi478h7i',
+    ip: '103.19.49.128',
+    url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+    type: 'error',
+    userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+    validationTime: 0,
+    timestamp: '2025-09-28 11:43:59.012'
+  }
+}
+{
+  level: 'info',
+  message: 'Received visit data:',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    body: {
+      type: 'error',
+      error: "Cannot read properties of undefined (reading 'phone')",
+      name: 'TypeError',
+      stack: "TypeError: Cannot read properties of undefined (reading 'phone')\n" +
+        '    at td (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:8807)\n' +
+        '    at ou (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:60224)\n' +
+        '    at ds (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:119149)\n' +
+        '    at ic (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108374)\n' +
+        '    at oc (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108302)\n' +
+        '    at lc (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:108165)\n' +
+        '    at qs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:105000)\n' +
+        '    at Gs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:105382)\n' +
+        '    at Rl (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:46573)\n' +
+        '    at https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:20:102950',
+      componentStack: '\n' +
+        '    at td (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:8263)\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at lf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:60524)\n' +
+        '    at af (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:57067)\n' +
+        '    at cf\n' +
+        '    at Qf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:5671)\n' +
+        '    at Zf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:7199)\n' +
+        '    at af (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:57067)\n' +
+        '    at _m (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-542c97d5.js:12:116785)\n' +
+        '    at Jf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:41:6583)\n' +
+        '    at ad (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-520209d8.js:51:476)',
+      url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      timestamp: '2025-09-28T11:43:56.358Z',
+      userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+      viewport: { width: 400, height: 504 },
+      retryCount: 1
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:3000',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      'x-request-id': '0a9e9b7a12813a78f081dfe85364eb72',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Android"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?1',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '2818'
+    },
+    timestamp: '2025-09-28 11:43:59.013'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 2242,
+    payloadType: 'Somatic Full Logger',
+    timestamp: '2025-09-28 11:43:59.477'
+  }
+}
+{
+  level: 'info',
+  message: 'Full visit data sent to Discord',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:56.358Z',
+    dataLength: 4208,
+    truncated: true,
+    timestamp: '2025-09-28 11:43:59.477'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 687,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:43:59.969'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:56.358Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:43:59.970'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent visit to Discord webhook',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:43:56.358Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:43:59.970'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759059839011-hyi478h7i',
+    method: 'POST',
+    url: '/api/log-visit',
+    duration: 959,
+    status: 200,
+    timestamp: '2025-09-28 11:43:59.971'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 228806656,
+      heapTotal: 31191040,
+      heapUsed: 16421464,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 11:48:07.693'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 11:48:07.706'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060095995-jfrxkphuw',
+    method: 'GET',
+    url: '/',
+    duration: 10,
+    status: 200,
+    timestamp: '2025-09-28 11:48:16.005'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:48:16.611'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:48:15.997Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 11:48:16.612'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060097918-w8hmqvk8w',
+    method: 'GET',
+    url: '/assets/index-BLoGPcre.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 11:48:17.923'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060097970-1su6njum0',
+    method: 'GET',
+    url: '/assets/index-Bx0wbBTC.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:48:17.973'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060097988-c4obnfnyc',
+    method: 'GET',
+    url: '/assets/vendor-koPvaJwR.js',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 11:48:17.990'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060098323-a8evc117j',
+    method: 'GET',
+    url: '/assets/form-DVEzSeIa.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:48:18.326'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060101402-iqwnupct2',
+    method: 'GET',
+    url: '/assets/waterfall.jpg',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 11:48:21.406'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060101577-insx91owe',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 11:48:21.579'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060108978-6xiuknkef',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 11:48:28.980'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060109242-w3tn5w8fn',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 3,
+    status: 404,
+    timestamp: '2025-09-28 11:48:29.245'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit data validated',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060112667-8nus8928c',
+    ip: '103.19.49.128',
+    url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+    type: 'error',
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    validationTime: 1,
+    timestamp: '2025-09-28 11:48:32.669'
+  }
+}
+{
+  level: 'info',
+  message: 'Received visit data:',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    body: {
+      type: 'error',
+      error: "Cannot read properties of undefined (reading 'phone')",
+      name: 'TypeError',
+      stack: "TypeError: Cannot read properties of undefined (reading 'phone')\n" +
+        '    at Kh (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:8807)\n' +
+        '    at go (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:60080)\n' +
+        '    at xi (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:118966)\n' +
+        '    at bs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:108206)\n' +
+        '    at gs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:108134)\n' +
+        '    at vs (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:107997)\n' +
+        '    at ls (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:104832)\n' +
+        '    at is (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:105214)\n' +
+        '    at Va (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:46456)\n' +
+        '    at https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:10:102782',
+      componentStack: '\n' +
+        '    at Kh (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:8263)\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at div\n' +
+        '    at of (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:60496)\n' +
+        '    at sf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:57061)\n' +
+        '    at af\n' +
+        '    at be (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:32:5608)\n' +
+        '    at _e (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:32:7129)\n' +
+        '    at sf (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:57061)\n' +
+        '    at Dm (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/index-BLoGPcre.js:12:116770)\n' +
+        '    at Ce (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:32:6517)\n' +
+        '    at Te (https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/assets/vendor-koPvaJwR.js:42:476)',
+      url: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      timestamp: '2025-09-28T11:48:31.254Z',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      viewport: { width: 1280, height: 591 },
+      retryCount: 0
+    },
+    headers: {
+      accept: '*/*',
+      host: 'localhost:3000',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+      'accept-encoding': 'gzip, deflate, br, zstd',
+      'accept-language': 'en-US, en; q=0.8',
+      origin: 'https://localhost:3000',
+      referer: 'https://animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev/form',
+      'x-request-id': '874efbae7ec3c780e39ef417aa5b6a38',
+      'x-real-ip': '10.241.0.36',
+      'x-forwarded-port': '443',
+      'x-forwarded-scheme': 'https',
+      'x-original-uri': '/api/log-visit',
+      'x-scheme': 'https',
+      'sec-ch-ua-platform': '"Windows"',
+      'sec-ch-ua': '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+      dnt: '1',
+      'sec-ch-ua-mobile': '?0',
+      'sec-gpc': '1',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-dest': 'empty',
+      priority: 'u=1, i',
+      'x-original-proto': 'https',
+      'x-forwarded-proto': 'https',
+      'x-forwarded-host': 'animated-space-couscous-jjpj699vq7gjfqrxg-3000.app.github.dev',
+      'x-forwarded-for': '103.19.49.128',
+      'proxy-connection': 'Keep-Alive',
+      'content-type': 'application/json',
+      'content-length': '2799'
+    },
+    timestamp: '2025-09-28 11:48:32.669'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 2232,
+    payloadType: 'Somatic Full Logger',
+    timestamp: '2025-09-28 11:48:33.121'
+  }
+}
+{
+  level: 'info',
+  message: 'Full visit data sent to Discord',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:48:31.254Z',
+    dataLength: 4127,
+    truncated: true,
+    timestamp: '2025-09-28 11:48:33.122'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 687,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:48:33.578'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:48:31.254Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:48:33.579'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent visit to Discord webhook',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:48:31.254Z',
+    type: 'error',
+    timestamp: '2025-09-28 11:48:33.579'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060112667-8nus8928c',
+    method: 'POST',
+    url: '/api/log-visit',
+    duration: 912,
+    status: 200,
+    timestamp: '2025-09-28 11:48:33.581'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 229687296,
+      heapTotal: 30928896,
+      heapUsed: 16431096,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 11:53:17.638'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 11:53:17.651'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060405339-glbbx9xpf',
+    method: 'GET',
+    url: '/',
+    duration: 13,
+    status: 200,
+    timestamp: '2025-09-28 11:53:25.352'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 11:53:25.807'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T11:53:25.341Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 11:53:25.808'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060407095-u0pcvyj88',
+    method: 'GET',
+    url: '/assets/index-MQkUcRIE.css',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 11:53:27.100'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060407111-ivnypt41h',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:53:27.114'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060407239-q3mfuv8m1',
+    method: 'GET',
+    url: '/assets/index-fjJGg40B.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:53:27.242'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060407390-0jgevwiho',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 13,
+    status: 200,
+    timestamp: '2025-09-28 11:53:27.403'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060410542-xoeegs46c',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 11:53:30.546'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060415721-dd97ellph',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 11:53:35.723'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060416898-cxjww9nnv',
+    method: 'GET',
+    url: '/src/assets/waterfall.jpg',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 11:53:36.901'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060416934-kyke32dh0',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 11:53:36.936'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060501608-2r4491pbu',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js.map',
+    duration: 12,
+    status: 200,
+    timestamp: '2025-09-28 11:55:01.620'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060501608-owsaatpkg',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js.map',
+    duration: 14,
+    status: 200,
+    timestamp: '2025-09-28 11:55:01.622'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060501674-6xxd1gkqi',
+    method: 'GET',
+    url: '/assets/index-fjJGg40B.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 11:55:01.678'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759060501722-9szhq2bjf',
+    method: 'GET',
+    url: '/assets/index-MQkUcRIE.css',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 11:55:01.724'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 232767488,
+      heapTotal: 30928896,
+      heapUsed: 16434440,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 12:04:28.324'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 12:04:28.339'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061073584-12c4oqo0b',
+    method: 'GET',
+    url: '/',
+    duration: 14,
+    status: 200,
+    timestamp: '2025-09-28 12:04:33.598'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 12:04:34.180'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T12:04:33.587Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 12:04:34.180'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061075544-bpru75ed2',
+    method: 'GET',
+    url: '/assets/index-AKHGmDKk.css',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 12:04:35.549'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061075631-21zct8t4k',
+    method: 'GET',
+    url: '/assets/index-CPyEN_rx.js',
+    duration: 7,
+    status: 200,
+    timestamp: '2025-09-28 12:04:35.638'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061075684-7boj42uaz',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 12:04:35.688'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061075691-g9177t41s',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 12:04:35.694'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061078691-yejncvfx5',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 7,
+    status: 200,
+    timestamp: '2025-09-28 12:04:38.698'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061080810-4pb97vy2l',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 12:04:40.812'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061081807-ybgzjtsyo',
+    method: 'GET',
+    url: '/src/assets/.jpg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 12:04:41.809'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061082251-palfq1kq0',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 12:04:42.253'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 226623488,
+      heapTotal: 31715328,
+      heapUsed: 15957752,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 12:09:40.240'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 12:09:40.253'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061391917-npzo532xa',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-28 12:09:51.926'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 12:09:52.449'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T12:09:51.918Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 12:09:52.450'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061393778-ilvz9sqmw',
+    method: 'GET',
+    url: '/assets/index-BxYDsXV1.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 12:09:53.781'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061393927-s7qkpmd36',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 12:09:53.933'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061393973-ev5do787r',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 7,
+    status: 200,
+    timestamp: '2025-09-28 12:09:53.980'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061394006-fxw8n48jf',
+    method: 'GET',
+    url: '/assets/index-Dt5MZ-U2.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 12:09:54.009'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061397113-adc0ry5qz',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 12:09:57.115'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061400747-03fc92nmn',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 12:10:00.752'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061400902-0qp63453p',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 12:10:00.904'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061401157-kjqytwy3b',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 6,
+    status: 404,
+    timestamp: '2025-09-28 12:10:01.163'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061418542-ehvktw948',
+    method: 'GET',
+    url: '/assets/index-Dt5MZ-U2.css',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 12:10:18.544'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061418768-g4qujuq49',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js.map',
+    duration: 10,
+    status: 200,
+    timestamp: '2025-09-28 12:10:18.778'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061418767-dcs6pi4eg',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js.map',
+    duration: 14,
+    status: 200,
+    timestamp: '2025-09-28 12:10:18.781'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759061420236-yv1hi1els',
+    method: 'GET',
+    url: '/assets/index-BxYDsXV1.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 12:10:20.240'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 225624064,
+      heapTotal: 17035264,
+      heapUsed: 14182232,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:46:44.841'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:46:44.858'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074422027-h2mwnqh6a',
+    method: 'GET',
+    url: '/',
+    duration: 43,
+    status: 200,
+    timestamp: '2025-09-28 15:47:02.070'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:47:02.597'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:47:02.029Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:47:02.598'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074423880-91src6k1b',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 15:47:03.886'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074423932-f1hf61kq2',
+    method: 'GET',
+    url: '/assets/index-CfH6rdni.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:47:03.935'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074423976-lvy7wornq',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:47:03.979'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074427347-bcnn2krkw',
+    method: 'GET',
+    url: '/assets/index-BMAr78ZO.css',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:47:07.349'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074428178-697hrv0dd',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:47:08.181'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074433833-e5kzw38h1',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:47:13.835'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074434036-l1216mb5j',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 15:47:14.038'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074434088-s2k3sz1fu',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:47:14.090'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 230539264,
+      heapTotal: 30928896,
+      heapUsed: 16436704,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:47:59.416'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:47:59.429'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074484527-nvz8sgu1k',
+    method: 'GET',
+    url: '/',
+    duration: 7,
+    status: 304,
+    timestamp: '2025-09-28 15:48:04.534'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074485002-rqvnw1rb9',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 4,
+    status: 304,
+    timestamp: '2025-09-28 15:48:05.006'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074485009-7vxpwjz9g',
+    method: 'GET',
+    url: '/assets/index-CfH6rdni.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:48:05.011'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074485028-yxzdfl0rm',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:48:05.030'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:48:05.066'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:48:04.529Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:48:05.067'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074485407-w34aar1nn',
+    method: 'GET',
+    url: '/assets/index-BMAr78ZO.css',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 15:48:05.408'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074486171-i3x695snr',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 6,
+    status: 304,
+    timestamp: '2025-09-28 15:48:06.177'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074491338-1ikiga5tg',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 4,
+    status: 304,
+    timestamp: '2025-09-28 15:48:11.342'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074491533-y4mstm0kv',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 8,
+    status: 404,
+    timestamp: '2025-09-28 15:48:11.541'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074491536-r75zpx5b4',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 8,
+    status: 304,
+    timestamp: '2025-09-28 15:48:11.544'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074553820-6gsdp35ak',
+    method: 'GET',
+    url: '/form',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 15:49:13.824'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074554277-6a1vrzahd',
+    method: 'GET',
+    url: '/assets/index-CfH6rdni.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:49:14.279'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074555549-2x9vhz3p3',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 15:49:15.551'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074555712-ow5k1hxqs',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:49:15.714'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074555718-kf5x1vghy',
+    method: 'GET',
+    url: '/assets/index-BMAr78ZO.css',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 15:49:15.719'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074557522-b903ahm33',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:49:17.524'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074557619-4gqvqpxh0',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:49:17.621'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074557828-mnmumfhy0',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 15:49:17.830'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 229359616,
+      heapTotal: 30928896,
+      heapUsed: 16436504,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:50:12.904'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:50:12.919'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074618062-sj9uumq4q',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-28 15:50:18.071'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:50:18.535'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:50:18.063Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:50:18.536'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074618573-8wf9978qo',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 15:50:18.579'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074618659-lsfwxezfu',
+    method: 'GET',
+    url: '/assets/index-BQTAx7En.js',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:50:18.661'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074619819-lwpfq1rst',
+    method: 'GET',
+    url: '/assets/index-CAn2ubBx.css',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:50:19.821'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074619866-qofk8l18q',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:50:19.869'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074621497-zocgqjab2',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:50:21.500'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074623960-5m38ojsf8',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:50:23.962'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074624176-uj7bxu4ma',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 15:50:24.177'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074624213-lmnogss1m',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 15:50:24.215'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074637352-rhqpfpmsp',
+    method: 'GET',
+    url: '/assets/index-CAn2ubBx.css',
+    duration: 3,
+    status: 304,
+    timestamp: '2025-09-28 15:50:37.355'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074637569-12tt11y3f',
+    method: 'GET',
+    url: '/assets/index-BQTAx7En.js.map',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 15:50:37.575'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074637582-z9i5pwvl8',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js.map',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 15:50:37.587'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074638943-50qwksn0d',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js.map',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 15:50:38.948'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 227704832,
+      heapTotal: 30928896,
+      heapUsed: 16426080,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:53:27.183'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:53:27.196'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074816517-kss4i5f4a',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-28 15:53:36.526'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:53:36.981'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:53:36.518Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:53:36.982'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074818368-0bfjj0xjf',
+    method: 'GET',
+    url: '/assets/index-DW-B67k-.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 15:53:38.373'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074818430-7nxi2dss4',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:53:38.433'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074818507-tx4wnlupo',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:53:38.509'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074818986-1xvh4h8xm',
+    method: 'GET',
+    url: '/assets/index-CouO7lU2.css',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:53:38.988'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074821712-lemu3xb05',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:53:41.715'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074825067-lwbe45x67',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 2,
+    status: 404,
+    timestamp: '2025-09-28 15:53:45.069'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074826088-p5wtxoz45',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:53:46.090'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074826281-11f4xn96c',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 304,
+    timestamp: '2025-09-28 15:53:46.284'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074839048-hqv2lq3gt',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js.map',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 15:53:59.054'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074840205-kawxzc3ty',
+    method: 'GET',
+    url: '/assets/index-CouO7lU2.css',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:54:00.207'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074840243-dwo25fqr0',
+    method: 'GET',
+    url: '/assets/index-DW-B67k-.js.map',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 15:54:00.247'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074840433-krw0hj2x4',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js.map',
+    duration: 7,
+    status: 200,
+    timestamp: '2025-09-28 15:54:00.440'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 232693760,
+      heapTotal: 31191040,
+      heapUsed: 16403120,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:55:07.601'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:55:07.614'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074911716-h8bnxpu2u',
+    method: 'GET',
+    url: '/',
+    duration: 70,
+    status: 200,
+    timestamp: '2025-09-28 15:55:11.786'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:55:12.245'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:55:11.718Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:55:12.246'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074913566-fqm1emk8l',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 15:55:13.570'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074913602-zzh50mjrx',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 15:55:13.606'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074913622-fg7a7qotg',
+    method: 'GET',
+    url: '/assets/index-BxYDsXV1.js',
+    duration: 4,
+    status: 200,
+    timestamp: '2025-09-28 15:55:13.626'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074914415-r7pu5a0g8',
+    method: 'GET',
+    url: '/assets/index-Dt5MZ-U2.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:55:14.418'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074916925-hswuek5ca',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 15:55:16.930'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074943043-exm5ewn8v',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 3,
+    status: 404,
+    timestamp: '2025-09-28 15:55:43.046'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074945421-y55jo3in6',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:55:45.423'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074945671-u3i9gdt02',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:55:45.673'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 228048896,
+      heapTotal: 30928896,
+      heapUsed: 16426136,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 15:56:26.673'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 15:56:26.692'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074993541-u1e8v9lnu',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-28 15:56:33.550'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074994059-ojormihnl',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 6,
+    status: 200,
+    timestamp: '2025-09-28 15:56:34.065'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074994067-9rvhslgm8',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 15:56:34.072'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 15:56:34.146'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T15:56:33.543Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 15:56:34.150'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074994160-8hmjb6bn6',
+    method: 'GET',
+    url: '/assets/index-DXDewLuA.css',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:56:34.162'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074995333-czzihy64d',
+    method: 'GET',
+    url: '/assets/index-B6lek8hs.js',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 15:56:35.335'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074997812-qaoecu9ns',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:56:37.815'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074999591-rp9dr1drg',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 15:56:39.594'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074999598-h3bju5vgj',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 2,
+    status: 304,
+    timestamp: '2025-09-28 15:56:39.600'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759074999641-tn3rpd3w0',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 3,
+    status: 404,
+    timestamp: '2025-09-28 15:56:39.644'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075075177-4o2qe0shh',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 1,
+    status: 304,
+    timestamp: '2025-09-28 15:57:55.178'
+  }
+}
+{
+  level: 'info',
+  message: 'Server initialization',
+  metadata: {
+    service: 'somatic-server',
+    environment: undefined,
+    nodeVersion: 'v22.17.0',
+    platform: 'linux',
+    memoryUsage: {
+      rss: 226103296,
+      heapTotal: 30928896,
+      heapUsed: 16427672,
+      external: 149646422,
+      arrayBuffers: 146162560
+    },
+    timestamp: '2025-09-28 16:03:56.825'
+  }
+}
+{
+  level: 'info',
+  message: 'Server started',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    port: '3000',
+    env: undefined,
+    allowedOrigins: undefined,
+    timestamp: '2025-09-28 16:03:56.839'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075466343-w44n6ebod',
+    method: 'GET',
+    url: '/',
+    duration: 9,
+    status: 200,
+    timestamp: '2025-09-28 16:04:26.352'
+  }
+}
+{
+  level: 'info',
+  message: 'Successfully sent Discord notification',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    statusCode: 204,
+    payloadSize: 431,
+    payloadType: 'Somatic Visit Logger',
+    timestamp: '2025-09-28 16:04:26.828'
+  }
+}
+{
+  level: 'info',
+  message: 'Visit logged to Discord successfully',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    visitId: '2025-09-28T16:04:26.344Z',
+    type: 'page_visit',
+    timestamp: '2025-09-28 16:04:26.829'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075468237-c48owzk8l',
+    method: 'GET',
+    url: '/assets/form-W2PSSBRM.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 16:04:28.242'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075468344-j5d13st0o',
+    method: 'GET',
+    url: '/assets/index-C_7n6_ZT.js',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 16:04:28.350'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075468410-8wfhyi3dz',
+    method: 'GET',
+    url: '/assets/index-CZkrjjr_.css',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 16:04:28.413'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075468437-qdeosbm4j',
+    method: 'GET',
+    url: '/assets/vendor-5D-o_3O6.js',
+    duration: 3,
+    status: 200,
+    timestamp: '2025-09-28 16:04:28.440'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075471401-jtck4mr7p',
+    method: 'GET',
+    url: '/assets/waterfall-CsT_XJQ2.jpeg',
+    duration: 2,
+    status: 200,
+    timestamp: '2025-09-28 16:04:31.403'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075471648-l81ncqbvl',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 5,
+    status: 200,
+    timestamp: '2025-09-28 16:04:31.653'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075476721-24kvr7gy5',
+    method: 'GET',
+    url: '/favicon.ico',
+    duration: 4,
+    status: 304,
+    timestamp: '2025-09-28 16:04:36.725'
+  }
+}
+{
+  level: 'info',
+  message: 'Request completed',
+  metadata: {
+    service: 'somatic-server',
+    environment: 'development',
+    nodeVersion: 'v22.17.0',
+    requestId: 'req-1759075476798-fecfoyk1u',
+    method: 'GET',
+    url: '/api/geoip',
+    duration: 4,
+    status: 404,
+    timestamp: '2025-09-28 16:04:36.802'
+  }
+}

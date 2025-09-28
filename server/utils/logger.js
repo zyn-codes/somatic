@@ -24,7 +24,7 @@ const requestFormat = winston.format.combine(
 
 // Create separate loggers for different concerns
 const errorLogger = winston.createLogger({
-    format: logFormat,
+    format: errorFormat,
     defaultMeta: {
         service: 'somatic-server',
         environment: process.env.NODE_ENV || 'development',
@@ -67,7 +67,7 @@ const errorLogger = winston.createLogger({
 
 // Enhanced development logging
 if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
+    errorLogger.add(new winston.transports.Console({
         format: winston.format.combine(
             winston.format.colorize(),
             winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),

@@ -23,7 +23,7 @@
 .form-hero {
   /* background image uses provided asset; keeps mobile-first behavior */
   min-height: 100vh;
-  background-image: url('/src/assets/waterfall.jpg');
+  background-image: url('/src/assets/waterfall.jpeg');
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -221,4 +221,31 @@ input, textarea, select {
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
+
+
 }
+/* Force flag size for react-phone-number-input */
+.PhoneInputCountry {
+  width: 24px !important;
+  height: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* If the flag is an img tag */
+.PhoneInputCountry img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* If the flag uses a background */
+.PhoneInputCountry > div {
+  background-size: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
