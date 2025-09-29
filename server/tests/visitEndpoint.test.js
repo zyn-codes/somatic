@@ -33,7 +33,7 @@ describe('Visit Tracking Endpoint Integration Tests', () => {
                 await logVisitToDiscord(req.body);
                 res.status(200).json({ success: true, visitId: req.body.timestamp });
             } catch (error) {
-                logger.default.error('Error logging visit', { error: error.message });
+                logger.error('Error logging visit', { error: error.message });
                 res.status(500).json({ error: 'Server error' });
             }
         });
@@ -69,7 +69,7 @@ describe('Visit Tracking Endpoint Integration Tests', () => {
 
         expect(response.body).toHaveProperty('success', true);
         expect(response.body).toHaveProperty('visitId');
-        expect(logger.default.info).toHaveBeenCalled();
+    expect(logger.info).toHaveBeenCalled();
         expect(logVisitToDiscord).toHaveBeenCalledWith(expect.objectContaining(visitData));
     });
 
@@ -111,7 +111,7 @@ describe('Visit Tracking Endpoint Integration Tests', () => {
             .expect(500);
 
         expect(response.body).toHaveProperty('error', 'Server error');
-        expect(logger.default.error).toHaveBeenCalledWith(
+        expect(logger.error).toHaveBeenCalledWith(
             'Error logging visit',
             expect.objectContaining({ error: 'Discord API error' })
         );

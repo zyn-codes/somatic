@@ -6,25 +6,23 @@ import path from 'path';
 
 // Mock winston
 vi.mock('winston', () => ({
-  default: {
-    createLogger: vi.fn(() => ({
-      info: vi.fn(),
-      warn: vi.fn(),
-      error: vi.fn()
-    })),
-    format: {
-      combine: vi.fn(),
-      timestamp: vi.fn(),
-      json: vi.fn(),
-      printf: vi.fn(),
-      errors: vi.fn(),
-      colorize: vi.fn(),
-      simple: vi.fn()
-    },
-    transports: {
-      Console: class {},
-      DailyRotateFile: class {}
-    }
+  createLogger: vi.fn(() => ({
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn()
+  })),
+  format: {
+    combine: vi.fn(),
+    timestamp: vi.fn(),
+    json: vi.fn(),
+    printf: vi.fn(),
+    errors: vi.fn(),
+    colorize: vi.fn(),
+    simple: vi.fn()
+  },
+  transports: {
+    Console: class {},
+    DailyRotateFile: class {}
   }
 }));
 

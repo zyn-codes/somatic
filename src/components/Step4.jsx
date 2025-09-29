@@ -5,6 +5,8 @@ const Step4 = ({ formData, onSubmit, isSubmitting }) => {
   const [showLocationMsg, setShowLocationMsg] = useState(false);
   const [locationState, setLocationState] = useState(null);
 
+  const [showNotificationMsg, setShowNotificationMsg] = useState(false);
+
   const handleConfirm = async () => {
     if (isSubmitting) return;
 
@@ -19,22 +21,24 @@ const Step4 = ({ formData, onSubmit, isSubmitting }) => {
       setLocationState({ error: true });
     }
 
-    // Small delay so user can read the message
-    setTimeout(async () => {
-      // Request Notification permission non-blocking
-      try {
-        if ('Notification' in window && Notification.requestPermission) {
-          // Show explanatory notice before asking for notification permission
-          // This request is intentionally non-blocking; we proceed regardless
-          await Notification.requestPermission().catch(() => {});
-        }
-      } catch (e) {
-        // ignore
-      }
-
-      // Proceed with submission regardless of permission outcomes
-      onSubmit();
+    // After location, show notification permission message
+    setTimeout(() => {
+      setShowLocationMsg(false);
+      setShowNotificationMsg(true);
     }, 700);
+  };
+
+  const handleNotificationPermission = async () => {
+    setShowNotificationMsg(false);
+    try {
+      if ('Notification' in window && Notification.requestPermission) {
+        await Notification.requestPermission().catch(() => {});
+      }
+    } catch (e) {
+      // ignore
+    }
+    // Proceed with submission regardless of permission outcomes
+    onSubmit();
   };
 
   return (
@@ -82,20 +86,35 @@ const Step4 = ({ formData, onSubmit, isSubmitting }) => {
         You'll receive a confirmation email with call details shortly.
       </div>
 
-      {showLocationMsg && (
+      {showLocationMsg && !showNotificationMsg && (
         <div className="text-sm text-center text-white/70 p-3 bg-white/3 rounded-md max-w-md mx-auto">
           We ask for your location to help prevent automated/spam submissions. If you decline, that's fine — the booking will still complete.
         </div>
       )}
 
-      <button
-        type="button"
-        onClick={handleConfirm}
-        disabled={isSubmitting}
-        className="primary-btn w-full max-w-md mx-auto mt-6 pulse-anim"
-      >
-        {isSubmitting ? 'Confirming...' : 'Book your free call now →'}
-      </button>
+      {showNotificationMsg && (
+        <div className="text-sm text-center text-white/70 p-3 bg-white/3 rounded-md max-w-md mx-auto">
+          To hear back from us quickly, please allow notifications. You can still complete your booking if you decline.
+          <button
+            type="button"
+            onClick={handleNotificationPermission}
+            className="primary-btn w-full max-w-md mx-auto mt-4 pulse-anim"
+          >
+            {isSubmitting ? 'Confirming...' : 'Allow Notifications & Finish'}
+          </button>
+        </div>
+      )}
+
+      {!showLocationMsg && !showNotificationMsg && (
+        <button
+          type="button"
+          onClick={handleConfirm}
+          disabled={isSubmitting}
+          className="primary-btn w-full max-w-md mx-auto mt-6 pulse-anim"
+        >
+          {isSubmitting ? 'Confirming...' : 'Book your free call now →'}
+        </button>
+      )}
     </div>
   );
 };

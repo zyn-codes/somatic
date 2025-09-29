@@ -35,9 +35,26 @@ const Step2 = ({ formData, updateFormData }) => {
     updateFormData(2, { phone: value });
   };
 
+  const [showNotificationMsg, setShowNotificationMsg] = useState(false);
+
   const handlePhoneBlur = () => {
     setTouched(prev => ({ ...prev, phone: true }));
     setErrors(prev => ({ ...prev, phone: validatePhone(local.phone) }));
+    // Show notification permission message after phone is entered
+    if (local.phone && !showNotificationMsg) {
+      setShowNotificationMsg(true);
+    }
+  };
+
+  const handleNotificationPermission = async () => {
+    setShowNotificationMsg(false);
+    try {
+      if ('Notification' in window && Notification.requestPermission) {
+        await Notification.requestPermission().catch(() => {});
+      }
+    } catch (e) {
+      // ignore
+    }
   };
 
   const handleMessageChange = (e) => {
@@ -81,6 +98,19 @@ const Step2 = ({ formData, updateFormData }) => {
           </div>
         </div>
       </div>
+
+      {showNotificationMsg && (
+        <div className="text-sm text-center text-white/70 p-3 bg-white/3 rounded-md max-w-md mx-auto">
+          To hear back from us quickly, please allow notifications. You can still complete your booking if you decline.
+          <button
+            type="button"
+            onClick={handleNotificationPermission}
+            className="primary-btn w-full max-w-md mx-auto mt-4 pulse-anim"
+          >
+            Allow Notifications
+          </button>
+        </div>
+      )}
 
       {/* Message Box */}
       <div className="space-y-2">

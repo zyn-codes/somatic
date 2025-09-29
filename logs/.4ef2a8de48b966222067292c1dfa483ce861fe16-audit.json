@@ -14,6 +14,11 @@
             "date": 1758903782979,
             "name": "/workspaces/somatic/logs/submissions-2025-09-26.log",
             "hash": "f76c900a3afc232a017e70008f5c1f932ea71a5a687047503915715edc28c447"
+        },
+        {
+            "date": 1759155093002,
+            "name": "/workspaces/somatic/logs/submissions-2025-09-29.log",
+            "hash": "82615bcf88ec888a4727f586dd999388c089e5c7d610e7253f4d3ed49f147b2e"
         }
     ],
     "hashType": "sha256"
