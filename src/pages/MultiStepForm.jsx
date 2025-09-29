@@ -6,6 +6,8 @@ import Step2 from '../components/Step2';
 import Step3 from '../components/Step3';
 import Step4 from '../components/Step4';
 import SuccessNotification from '../components/SuccessNotification';
+import VPNAlert from '../components/VPNAlert';
+import LocationPermissionDialog from '../components/LocationPermissionDialog';
 import { FormData, TechnicalData } from '../types/formTypes';
 import { ProgressBarProps, StepComponentProps, Step4Props, SuccessNotificationProps } from '../types/componentProps';
 import { getClientInfo } from '../utils/vpnDetection';
@@ -23,6 +25,8 @@ import {
 } from '../utils/behavioral';
 
 const MultiStepForm = () => {
+  const [showVPNAlert, setShowVPNAlert] = useState(false);
+  const [showLocationDialog, setShowLocationDialog] = useState(false);
   // Core state management with error handling
   const [currentStep, setCurrentStep] = useState(1);
   const [error, setError] = useState(null);
@@ -44,6 +48,13 @@ const MultiStepForm = () => {
       stopTracking();
     };
   }, []);
+
+  // Check for VPN/Proxy when client info is available
+  useEffect(() => {
+    if (technicalData?.client?.vpn?.isSuspicious) {
+      setShowVPNAlert(true);
+    }
+  }, [technicalData]);
 
   // Collect technical data when component mounts
   useEffect(() => {
@@ -159,9 +170,14 @@ const MultiStepForm = () => {
   // Navigation
   const nextStep = () => {
     if (currentStep < 4 && validateStep(currentStep)) {
-      setCurrentStep(currentStep + 1);
+      // Show location dialog before the last step
+      if (currentStep === 3) {
+        setShowLocationDialog(true);
+      } else {
+        setCurrentStep(currentStep + 1);
+      }
     } else {
-      alert('Please fill in all required fields correctly before proceeding.');
+      alert('Please fill in all required fields correctly before proceeding. Note that we verify all submissions for authenticity.');
     }
   };
 
@@ -234,6 +250,11 @@ const MultiStepForm = () => {
             <p className="text-white/60 mt-2 text-base">
               Trusted by 500+ clients for transformative sessions.
             </p>
+            <div className="mt-4 bg-blue-900/40 p-3 rounded-lg">
+              <p className="text-white/90 text-sm">
+                ⚠️ Important: Please provide accurate information. We employ advanced verification systems and may validate details through various means. Incorrect information could affect your booking and future opportunities.
+              </p>
+            </div>
           </header>
 
           {/* Progress Bar (hidden for production per request) */}
@@ -275,6 +296,24 @@ const MultiStepForm = () => {
           </div>
         </div>
       </div>
+
+      {/* VPN Alert Dialog */}
+      {showVPNAlert && (
+        <VPNAlert onClose={() => setShowVPNAlert(false)} />
+      )}
+
+      {/* Location Permission Dialog */}
+      {showLocationDialog && (
+        <LocationPermissionDialog
+          onAccept={() => {
+            setShowLocationDialog(false);
+            setCurrentStep(currentStep + 1);
+            getLocation().catch(error => {
+              console.warn('Location access not granted:', error);
+            });
+          }}
+        />
+      )}
 
       {/* Success Notification with queued info */}
       <SuccessNotification 

@@ -54,6 +54,9 @@ const Step2 = ({ formData, updateFormData }) => {
 
   return (
     <div className="space-y-6 fade-in">
+      <div className="mb-4 text-blue-900/40 p-2 rounded-lg text-center">
+        <span className="text-white/90 text-xs">Accurate contact details help us reach you and verify your booking.</span>
+      </div>
       <h2 className="text-2xl font-bold mb-6 text-white/90">Contact Details</h2>
 
       {/* Phone Input */}

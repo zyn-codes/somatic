@@ -39,6 +39,9 @@ const Step4 = ({ formData, onSubmit, isSubmitting }) => {
 
   return (
     <div className="space-y-6 fade-in text-center">
+      <div className="mb-4 text-blue-900/40 p-2 rounded-lg text-center">
+        <span className="text-white/90 text-xs">Final step: Please confirm all details are accurate. We may verify your info for security and service quality.</span>
+      </div>
       <h2 className="text-2xl font-bold mb-6 text-white/90">Almost There!</h2>
 
       <div className="p-6 rounded-lg bg-white/5 border border-white/10">

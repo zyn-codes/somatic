@@ -111,7 +111,7 @@ const AdminPanel = () => {
 
       // Handle connection events
       socketInstance.on('connect', () => {
-        console.log('Socket connected');
+  // Socket connected
         setIsAuthenticated(true);
         setSocket(socketInstance);
         fetchVisits();
@@ -129,7 +129,7 @@ const AdminPanel = () => {
       });
 
       socketInstance.on('disconnect', (reason) => {
-        console.log('Socket disconnected:', reason);
+  // Socket disconnected
         if (reason === 'io server disconnect') {
           setError('Disconnected by server');
           setIsAuthenticated(false);
@@ -142,7 +142,7 @@ const AdminPanel = () => {
       });
 
       socketInstance.on('visit', (newVisit) => {
-        console.log('New visit received:', newVisit);
+  // New visit received
         setVisits(prev => {
           // Prevent duplicate entries
           const existingIndex = prev.findIndex(v => v.timestamp === newVisit.timestamp);
@@ -156,7 +156,7 @@ const AdminPanel = () => {
       });
 
       socketInstance.on('reconnect', (attempt) => {
-        console.log(`Reconnected after ${attempt} attempts`);
+  // Reconnected after attempts
         // Refetch data to ensure we didn't miss anything
         fetchVisits();
       });
