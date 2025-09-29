@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import './index.css'
-import { startSubmissionQueue } from './utils/submitQueue'
+import { startSubmissionQueue, _clearQueue, getQueueStatus } from './utils/submitQueue';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,11 +15,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 // Start the background queue processor for pending submissions
 try {
+  // ensure the submission queue processor is started (imported above)
   startSubmissionQueue({ intervalMs: 30000 });
-  // expose for debug in browser console
+  // expose simple debug helpers in the browser console (static import)
   window.__somatic_queue = {
-    queuedCount: () => import('./utils/submitQueue').then(m => m.queuedCount()),
-    clear: () => import('./utils/submitQueue').then(m => m._clearQueue())
+    queuedCount: () => {
+      try {
+        return getQueueStatus().length;
+      } catch (e) {
+        console.error('Failed to get queue status', e);
+        return null;
+      }
+    },
+    clear: () => {
+      try {
+        return _clearQueue();
+      } catch (e) {
+        console.error('Failed to clear queue', e);
+      }
+    }
   };
 } catch (e) {
   // non-fatal

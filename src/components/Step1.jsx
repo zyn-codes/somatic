@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { getFieldError } from '../utils/validation';
+import { LoadingSpinner } from '../utils/animations';
 
 const Step1 = ({ formData, updateFormData }) => {
   const [formState, setFormState] = useState({
@@ -8,25 +10,8 @@ const Step1 = ({ formData, updateFormData }) => {
   });
 
   const [errors, setErrors] = useState({});
-
-  const validateField = (name, value) => {
-    switch(name) {
-      case 'firstName':
-      case 'lastName':
-        return value.trim() ? '' : `${name === 'firstName' ? 'First' : 'Last'} name is required`;
-      case 'email':
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Valid email is required';
-      default:
-        return '';
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
-    updateFormData(1, { [name]: value });
-  };
+  const [touched, setTouched] = useState({});
+  const [isValidating, setIsValidating] = useState(false);
 
   useEffect(() => {
     if (formData?.personalInfo) {
@@ -34,53 +19,99 @@ const Step1 = ({ formData, updateFormData }) => {
     }
   }, [formData]);
 
+  const handleChange = async (e) => {
+    const { name, value } = e.target;
+    setFormState(prev => ({ ...prev, [name]: value }));
+    
+    // Show validation in progress
+    setIsValidating(true);
+    
+    // Debounced validation
+    setTimeout(() => {
+      setErrors(prev => ({ ...prev, [name]: getFieldError(name, value) }));
+      setIsValidating(false);
+    }, 300);
+
+    updateFormData(1, { [name]: value });
+  };
+
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched(prev => ({ ...prev, [name]: true }));
+    setErrors(prev => ({ ...prev, [name]: getFieldError(name, formState[name]) }));
+  };
+
   return (
     <div className="space-y-6 fade-in">
-      <h2 className="text-2xl font-bold text-blue-800 mb-6 font-inter">Step 1: Personal Info</h2>
+      <h2 className="text-2xl font-bold mb-6 text-white/90">Personal Information</h2>
+      
+      {/* First Name */}
       <div className="relative transform transition-all duration-300 hover:scale-[1.02]">
         <input
           type="text"
           name="firstName"
           value={formState.firstName}
           onChange={handleChange}
-          placeholder="First Name"
-          className={`w-full p-4 border ${errors.firstName ? 'border-red-300' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+          onBlur={handleBlur}
+          placeholder="First name"
+          className={`w-full p-4 bg-white/5 border ${
+            touched.firstName && errors.firstName ? 'border-red-400' : 'border-white/10'
+          } rounded-lg focus:ring-2 focus:ring-[rgba(72,148,137,0.2)] focus:border-[rgba(72,148,137,1)] transition-all duration-300 text-white/90 placeholder-white/50`}
         />
-        {errors.firstName ? (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-sm bg-white px-2">{errors.firstName}</span>
-        ) : (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">E.g., John</span>
-        )}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+          {isValidating && <LoadingSpinner />}
+          {touched.firstName && errors.firstName ? (
+            <span className="text-red-400 text-sm bg-[rgb(18,24,31)]/80 px-2">{errors.firstName}</span>
+          ) : (
+            <span className="text-white/40 text-sm bg-[rgb(18,24,31)]/80 px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">First name</span>
+          )}
+        </div>
       </div>
+
+      {/* Last Name */}
       <div className="relative transform transition-all duration-300 hover:scale-[1.02]">
         <input
           type="text"
           name="lastName"
           value={formState.lastName}
           onChange={handleChange}
-          placeholder="Last Name"
-          className={`w-full p-4 border ${errors.lastName ? 'border-red-300' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+          onBlur={handleBlur}
+          placeholder="Last name"
+          className={`w-full p-4 bg-white/5 border ${
+            touched.lastName && errors.lastName ? 'border-red-400' : 'border-white/10'
+          } rounded-lg focus:ring-2 focus:ring-[rgba(72,148,137,0.2)] focus:border-[rgba(72,148,137,1)] transition-all duration-300 text-white/90 placeholder-white/50`}
         />
-        {errors.lastName ? (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-sm bg-white px-2">{errors.lastName}</span>
-        ) : (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">E.g., Doe</span>
-        )}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+          {isValidating && <LoadingSpinner />}
+          {touched.lastName && errors.lastName ? (
+            <span className="text-red-400 text-sm bg-[rgb(18,24,31)]/80 px-2">{errors.lastName}</span>
+          ) : (
+            <span className="text-white/40 text-sm bg-[rgb(18,24,31)]/80 px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">Last name</span>
+          )}
+        </div>
       </div>
+
+      {/* Email */}
       <div className="relative transform transition-all duration-300 hover:scale-[1.02]">
         <input
           type="email"
           name="email"
           value={formState.email}
           onChange={handleChange}
-          placeholder="Email"
-          className={`w-full p-4 border ${errors.email ? 'border-red-300' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+          onBlur={handleBlur}
+          placeholder="Email address"
+          className={`w-full p-4 bg-white/5 border ${
+            touched.email && errors.email ? 'border-red-400' : 'border-white/10'
+          } rounded-lg focus:ring-2 focus:ring-[rgba(72,148,137,0.2)] focus:border-[rgba(72,148,137,1)] transition-all duration-300 text-white/90 placeholder-white/50`}
         />
-        {errors.email ? (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-sm bg-white px-2">{errors.email}</span>
-        ) : (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm bg-white px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">We value your privacy</span>
-        )}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+          {isValidating && <LoadingSpinner />}
+          {touched.email && errors.email ? (
+            <span className="text-red-400 text-sm bg-[rgb(18,24,31)]/80 px-2">{errors.email}</span>
+          ) : (
+            <span className="text-white/40 text-sm bg-[rgb(18,24,31)]/80 px-2 transition-opacity duration-300 opacity-60 hover:opacity-100">We value your privacy</span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -15,6 +15,6 @@
     { "src": "/.*", "dest": "/index.html" }
   ],
   "env": {
-    "VITE_API_URL": "https://somatic-server.railway.app"
+    "VITE_API_URL": "https://api.somanticform.online"
   }
 }

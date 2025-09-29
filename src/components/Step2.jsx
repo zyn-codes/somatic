@@ -1,85 +1,114 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
+import { validatePhone } from '../utils/validation';
+import { LoadingSpinner } from '../utils/animations';
 
 const Step2 = ({ formData, updateFormData }) => {
-  const [phoneError, setPhoneError] = useState('');
-  
-  const handlePhoneChange = (value) => {
-    try {
-      // Update via parent-provided updater for consistency
-      updateFormData(2, { phone: value });
-      // Clear error when input changes
-      setPhoneError('');
-    } catch (error) {
-      console.error('Error updating phone:', error);
-      setPhoneError('Invalid phone number format');
+  const [local, setLocal] = useState({
+    phone: formData?.contactInfo?.phone || '',
+    message: formData?.contactInfo?.message || '',
+    isVip: formData?.contactInfo?.isVip || false
+  });
+
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [isValidating, setIsValidating] = useState(false);
+
+  useEffect(() => {
+    if (formData?.contactInfo) {
+      setLocal(formData.contactInfo);
     }
+  }, [formData]);
+
+  const handlePhoneChange = (value) => {
+    setLocal(prev => ({ ...prev, phone: value }));
+    
+    // Show validation in progress
+    setIsValidating(true);
+    
+    // Debounced validation
+    setTimeout(() => {
+      setErrors(prev => ({ ...prev, phone: validatePhone(value) }));
+      setIsValidating(false);
+    }, 300);
+
+    updateFormData(2, { phone: value });
+  };
+
+  const handlePhoneBlur = () => {
+    setTouched(prev => ({ ...prev, phone: true }));
+    setErrors(prev => ({ ...prev, phone: validatePhone(local.phone) }));
   };
 
   const handleMessageChange = (e) => {
-    updateFormData(2, { message: e.target.value });
+    const { value } = e.target;
+    setLocal(prev => ({ ...prev, message: value }));
+    updateFormData(2, { message: value });
   };
 
   const handleVipChange = (e) => {
-    updateFormData(2, { isVip: e.target.checked });
+    const { checked } = e.target;
+    setLocal(prev => ({ ...prev, isVip: checked }));
+    updateFormData(2, { isVip: checked });
   };
 
   return (
-    <div className="space-y-4 fade-in">
-      <h2 className="text-2xl font-bold text-blue-800 mb-4 font-inter">Step 2: Contact Details</h2>
-      
-      {/* Phone Input with proper validation */}
+    <div className="space-y-6 fade-in">
+      <h2 className="text-2xl font-bold mb-6 text-white/90">Contact Details</h2>
+
+      {/* Phone Input */}
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">Phone Number *</label>
-        <div className="phone-input-container">
+        <label className="block text-sm font-medium text-white/80">Phone Number</label>
+        <div className="relative">
           <PhoneInput
             international
-            countryCallingCodeEditable={false}
             defaultCountry="US"
-            value={formData.contactInfo?.phone || ''}
+            value={local.phone}
             onChange={handlePhoneChange}
-            className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 transition"
+            onBlur={handlePhoneBlur}
+            className={`w-full p-4 bg-white/5 border ${
+              touched.phone && errors.phone ? 'border-red-400' : 'border-white/10'
+            } rounded-lg focus-within:ring-2 focus-within:ring-[rgba(72,148,137,0.2)] focus-within:border-[rgba(72,148,137,1)] transition-all duration-300 text-white/90`}
           />
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+            {isValidating && <LoadingSpinner />}
+            {touched.phone && errors.phone && (
+              <span className="text-red-400 text-sm bg-[rgb(18,24,31)]/80 px-2">{errors.phone}</span>
+            )}
+          </div>
         </div>
-        {phoneError && <p className="text-red-500 text-sm mt-1">{phoneError}</p>}
-      </div>
-
-      {/* Email Input */}
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">Secondary Email (optional)</label>
-        <input 
-          type="email" 
-          placeholder="backup@example.com" 
-          value={formData.contactInfo?.secondaryEmail || ''}
-            onChange={(e) => updateFormData(2, { secondaryEmail: e.target.value })}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 transition"
-        />
       </div>
 
       {/* Message Box */}
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">Additional Message</label>
-        <textarea
-          placeholder="Enter any additional information..."
-          value={formData.contactInfo?.message || ''}
-          onChange={handleMessageChange}
-          rows={4}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 transition resize-none"
-        />
+        <label className="block text-sm font-medium text-white/80">
+          Why are you hoping to do Somatic work and what are you hoping to work on?
+        </label>
+        <div className="relative">
+          <textarea
+            placeholder="Share your goals and what brings you here..."
+            value={local.message}
+            onChange={handleMessageChange}
+            rows={4}
+            className="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-[rgba(72,148,137,0.2)] focus:border-[rgba(72,148,137,1)] transition-all duration-300 text-white/90 placeholder-white/50 resize-none"
+          />
+          <div className="absolute right-4 bottom-4 text-white/40 text-sm">
+            Optional
+          </div>
+        </div>
       </div>
 
-      {/* VIP Checkbox */}
-      <div className="flex items-center space-x-2">
+      {/* Free consultation slot checkbox */}
+      <div className="flex items-center space-x-3 mt-6">
         <input
           type="checkbox"
           id="vip-checkbox"
-          checked={formData.contactInfo?.isVip || false}
+          checked={local.isVip}
           onChange={handleVipChange}
-          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
+          className="h-5 w-5 text-[rgb(72,148,137)] focus:ring-[rgba(72,148,137,0.5)] border-white/20 rounded cursor-pointer bg-white/5"
         />
-        <label htmlFor="vip-checkbox" className="text-sm font-medium text-gray-700 cursor-pointer">
-          Priority Processing (VIP Fast Track)
+        <label htmlFor="vip-checkbox" className="text-sm font-medium text-white/80 cursor-pointer select-none">
+          Reserve a free consultation phone call (recommended)
         </label>
       </div>
     </div>

@@ -143,9 +143,14 @@ export function _clearQueue() {
   writeQueue([]);
 }
 
+export function getQueueStatus() {
+  return readQueue();
+}
+
 export default {
   enqueueSubmission,
   startSubmissionQueue,
   queuedCount,
+  getQueueStatus,
   _clearQueue
 };
