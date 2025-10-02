@@ -8,13 +8,48 @@
         "buildCommand": "npm run build",
         "distDir": "dist"
       }
+    },
+    {
+      "src": "python_server/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/python_server/main.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/python_server/main.py"
+    },
+    {
+      "src": "/docs",
+      "dest": "/python_server/main.py"
+    },
+    {
+      "src": "/admin",
+      "dest": "/python_server/main.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ],
   "env": {
-    "VITE_API_URL": "https://api.somanticform.online"
+    "ADMIN_PASSWORD": "@admin_password",
+    "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "python_server/main.py": {
+      "maxDuration": 10
+    }
   }
 }

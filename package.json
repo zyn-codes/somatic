@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "cd server && node index.js",
-    "start:dev": "npm run build && cd server && node index.js",
-    "test-admin-socket": "node server/test-admin-socket.js",
+    "start": "cd python_server && python main.py",
+    "start:dev": "npm run build && cd python_server && python main.py",
+    "install:python": "pip install -r requirements.txt",
+    "deploy:vercel": "./deploy-vercel.sh",
+    "deploy:render": "./deploy-render.sh",
     "test": "vitest"
   },
   "dependencies": {

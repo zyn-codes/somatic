@@ -1,10 +1,38 @@
 services:
   - type: web
-    name: somatic
-    env: node
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    name: somatic-visitor-intelligence
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "cd python_server && python main.py"
+    plan: starter
+    region: oregon
+    branch: main
     envVars:
-      - key: NODE_VERSION
-        value: 18
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+    healthCheckPath: /health
     autoDeploy: true
+
+  - type: static
+    name: somatic-frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://somatic-visitor-intelligence.onrender.com/api/*
+      - type: rewrite
+        source: /health
+        destination: https://somatic-visitor-intelligence.onrender.com/health
+      - type: rewrite
+        source: /admin
+        destination: https://somatic-visitor-intelligence.onrender.com/admin
+    envVars:
+      - key: VITE_API_URL
+        value: https://somatic-visitor-intelligence.onrender.com

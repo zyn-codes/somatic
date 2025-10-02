@@ -1,0 +1,56 @@
+# Somatic Python Server Environment Configuration
+# Copy this file to .env and update the values
+
+# Environment
+NODE_ENV=development
+DEBUG=true
+HOST=localhost
+PORT=5000
+
+# Security
+ADMIN_PASSWORD=your_secure_admin_password_here
+JWT_SECRET=your_jwt_secret_key_here
+PII_SALT=your_pii_salt_here
+
+# Database Configuration
+# For SQLite (development): leave empty or use sqlite:///./data/somatic.db
+# For PostgreSQL (production): postgresql+asyncpg://user:password@host:port/database
+DATABASE_URL=
+
+# Discord Integration (optional)
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/YOUR_WEBHOOK_URL
+DISCORD_WEBHOOK_URL_ALERTS=https://discord.com/api/webhooks/YOUR_ALERTS_WEBHOOK_URL
+
+# External APIs (optional)
+GEOIP_DATABASE_PATH=./data/GeoLite2-City.mmdb
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_TO_FILE=true
+LOG_RETENTION_DAYS=30
+
+# Rate Limiting
+RATE_LIMIT_ENABLED=true
+RATE_LIMIT_PER_MINUTE=100
+API_RATE_LIMIT_PER_MINUTE=50
+
+# Security Settings
+ENABLE_WAF=true
+BLOCK_TOR=false
+BLOCK_VPN=false
+MIN_RISK_SCORE_ALERT=0.7
+
+# Performance
+MAX_WORKERS=1
+ENABLE_GZIP=true
+ENABLE_CORS=true
+
+# Monitoring
+HEALTH_CHECK_ENABLED=true
+METRICS_ENABLED=true
+
+# Data Retention
+DATA_RETENTION_DAYS=90
+BACKUP_ENABLED=true
+BACKUP_RETENTION_DAYS=30
+

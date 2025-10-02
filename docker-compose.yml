@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  # Somatic Python Server
+  somatic-server:
+    build:
+      context: .
+      dockerfile: python_server/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - DISCORD_WEBHOOK_URL_ALERTS=${DISCORD_WEBHOOK_URL_ALERTS}
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - PII_SALT=${PII_SALT}
+    volumes:
+      - somatic_data:/app/data
+      - somatic_logs:/app/logs
+    networks:
+      - somatic_network
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # PostgreSQL Database (optional, for production)
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=somatic
+      - POSTGRES_USER=somatic
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - somatic_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U somatic"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis for caching and session storage (optional)
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - somatic_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx reverse proxy (optional, for production)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - somatic_logs:/var/log/nginx
+    networks:
+      - somatic_network
+    restart: unless-stopped
+    depends_on:
+      - somatic-server
+
+volumes:
+  somatic_data:
+    driver: local
+  somatic_logs:
+    driver: local
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  somatic_network:
+    driver: bridge
+
